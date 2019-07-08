@@ -1,0 +1,331 @@
+---
+name: "Dr. Sarah E"
+surname: "Schwartz"
+position: "Research Assistant Professor"
+address: "Utah State University"
+phone: (435) 797-0169
+www: "SarahSchwartzStats.com"
+email: "Sarah.Schwartz@usu.edu"
+twitter: USU_StatStudio
+github: SarBearSchwartz
+linkedin: SarBearSchwartz
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::moderncv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+
+# Appointments
+
+```{r}
+tibble::tribble(
+  ~position, ~year_span, ~department, ~location, ~bullet, 
+  "Assistant Research Professor",
+  "2015-present",
+  "Psychology Department, College of Education and Human Services",
+  "Utah State University",
+  "Director, The Statistical Consulting Studio",
+  "Assistant Research Professor",
+  "2015-present",
+  "Psychology Department, College of Education and Human Services",
+  "Utah State University",
+  "Instructor, graduate student quantitatice methods and statistics courses",
+  "Statistician",
+  "2013-2015",
+  "Office of Research Services, College of Education and Human Services",
+  "Utah State University",
+  "Acting Director, Office of Methodological and Data Sciences",
+  "Statistician",
+  "2013-2015",
+  "Office of Research Services, College of Education and Human Services",
+  "Utah State University",
+  "Instructor, graduate student quantitatice methods and statistics courses",
+  "Statistician and Data Manager",
+  "2005-2013",
+  "Center for Epidemiology",
+  "Utah State University",
+  "Managed databases, clean data, and prepare custom datasets",
+  "Statistician and Data Manager",
+  "2005-2013",
+  "Center for Epidemiology",
+  "Utah State University",
+  "Performed statistical analyses and prepared publications, posters, presentations,
+and grant submissions",
+  "Statistician and Data Manager",
+  "2005-2013",
+  "Center for Epidemiology",
+  "Utah State University",
+  "Worked under three main grants and many co-investigators: University of Utah,
+  BYU, Duke, John Hopkins, University of Maryland, ect.",
+  "Data Manager",
+  "2012",
+  "Kenoi Genetics Lab",
+  "Brigham Young University",
+  "Managed databases and prepare custom datasets",
+"Adjunct Lecturer",
+"2006-2008",
+"Mathematics and Statistics Department",
+"Utah State University",
+"Traditional, evening, and distance courses",
+"High School Teacher, Math and Science",
+"2000-2004",
+"",
+"",
+"Sky View High School, Smithfield, Utah",
+"High School Teacher, Math and Science",
+"2000-2004",
+"",
+"",
+"Logan River Academy, Logan, Utah"
+) %>%  
+  vitae::detailed_entries(
+    what = position,
+    when =year_span,
+    with = department,
+    where = location,
+    why = bullet
+  )
+```
+
+
+
+# Education
+
+```{r}
+tibble::tribble(
+  ~degree, ~year_span, ~school, ~location, ~bullet,
+  "PhD: Mathetatics, Specialization in Statistics",  
+  "2013-2017", 
+  "Utah State University", 
+  "Logan, Utah, USA", 
+  "Disertation: Exact Approaches for Bias Detection and Avoidance with Small, Sparce, or Correlated Categorical Data",
+  "PhD: Mathetatics, Specialization in Statistics",  
+  "2013-2017", 
+  "Utah State University", 
+  "Logan, Utah, USA",
+  "Mentor: Dr. Chris Corcoran",
+  "PhD: Mathetatics, Specialization in Statistics",  
+  "2013-2017", 
+  "Utah State University", 
+  "Logan, Utah, USA",
+  "TA: Lecturer and grader",
+    "PhD: Mathetatics, Specialization in Statistics",  
+  "2013-2017", 
+  "Utah State University", 
+  "Logan, Utah, USA",
+  "RA: Simulation programmer, Cytel Software Inc.",  "PhD: Mathetatics, Specialization in Statistics",  
+  "2013-2017", 
+  "Utah State University", 
+  "Logan, Utah, USA",
+  "2015: Department Academic Excellence Award",
+    "PhD: Mathetatics, Specialization in Statistics",  
+  "2013-2017", 
+  "Utah State University", 
+  "Logan, Utah, USA",
+  "2014: Department Industrious Graduate Student Award",
+  
+  
+  "MS: Statistics",  
+  "2004-2006", 
+  "Utah State University", 
+  "Logan, Utah, USA", 
+  "Thesis: Linear Mixed Effects Modeling of Neuropsychiatric Symptoms in Patients with Dementia",
+  "MS: Statistics",  
+  "2004-2006", 
+  "Utah State University", 
+  "Logan, Utah, USA", 
+  "TA: Lecturer and grader",
+    "MS: Statistics",  
+  "2004-2006", 
+  "Utah State University", 
+  "Logan, Utah, USA", 
+  "RA: Statistician, Center for Epidemiology Studies",
+    "MS: Statistics",  
+  "2004-2006", 
+  "Utah State University", 
+  "Logan, Utah, USA", 
+  "2005: Department Graduate Student Teacher of the Year Award",  
+  
+  "BS: Math and Chem Secondary Education",  
+  "1998-2000", 
+  "Utah State University", 
+  "Logan, Utah, USA", 
+  "Student Teaching: Sky View High School, Smithfield, Utah"
+) %>%  
+  vitae::detailed_entries(
+    what = degree,
+    when =year_span,
+    with = school,
+    where = location,
+    why = bullet
+  )
+```
+
+# Licenses
+
+```{r}
+tibble::tribble(
+  ~title, ~year_span,  ~location, ~bullet,
+  "Secondary Education Teaching License",
+  "2001-2009",
+  "State of Utah",
+  "Endorsements: mathematics level 4 and chemistry"
+) %>%  
+  vitae::detailed_entries(
+    what = title,
+    when =year_span,
+    where = location,
+    why = bullet
+  )
+```
+
+
+# Software
+
+```{r}
+tibble::tribble(
+  ~title,  ~bullet,
+  "R, R Studio, and R Markdown (LaTeX)",
+  "Data cleaning and wrangling, statistical analysis, and reproducible reporting",
+  "SAS, SPSS, MPlus, and G*Power",
+  "Data cleaning and wrangling, and statistical analysis",
+  "REDCap and Qualtrics",
+  "Creating forms and collecting data"
+) %>%  
+  vitae::detailed_entries(
+    what = title,
+    why = bullet
+  )
+```
+
+\clearpage
+
+# Publications
+
+## Submitted
+
+## 2016
+
+```{r}
+# bibliography_entries("publications.bib")
+```
+
+
+
+\clearpage
+
+# Teaching: Utah State University - Graduate Courses
+
+\vspace{0.5cm}
+
+**PSY 7650: Multilevel and Marginal Models for the Social Sciences**
+
+Coverage of multilevel *(ie, mixed-effects, hierarchical linear)* and marginal
+*(ie, GEE)* models for both continuous and categorical outcomes. Includes
+application of these methods to many types of cross-sectional and longitudinal
+research designs *(eg, experimental, case-control, cohort, cross-over, complex
+sample, randomized controlled trials)*.    
+    
+    
+* Software: `R` and `R Studio`
+
+  + 2019 Fall *(scheduled)*
+  + 2018 Fall
+  + 2017 Fall
+  + 2016 Fall
+
+
+\vspace{0.5cm}
+
+
+
+**PSY 6600: Statistical Foundataions *(previously: Research Design and Analysis I)* **
+
+Research design and statistical concepts for research in education, human
+services, and psychology, with emphasis on the selection and interpretation of
+statistical analyses.  Focus on ANOVA based methods. Includes a combination of traditional face-to-face and diatnace site students.  *(Summer sessions condensed to 7 weeks)*  
+
+
+* Software: `R` and `R Studio`
+    + 2019 Summer
+    + 2019 Spring
+    + 2018 Summer
+    + 2018 Spring
+
+* Software: `SPSS`
+   + 2017 Summer
+   + 2017 Spring
+   + 2016 Summer
+   + 2015 Summer
+
+
+
+
+\clearpage
+
+# Teaching: Utah State University - Undergraduate Courses
+
+
+
+\vspace{0.5cm}
+
+
+
+**STAT 2000: Statistical Methods**
+
+Introduction to statistical concepts, graphical techniques, probability, distributions, estimation, one and two sample testing, chi-square tests, and simple
+linear regression, one-way ANOVA.    
+
+* Software: `StatCrunch`
+    + 2014 Fall
+    + 2014 Spring
+    + 2005 Fall
+    + 2005 Spring
+
+
+\vspace{0.5cm}
+
+
+
+**STAT 1040 Introduction to Statistics**
+
+Descriptive and inferential statistical methods. Emphasis on conceptual understanding and statistical thinking. Examples presented from many different
+areas.    
+
+* Software: *none*
+    + 2008 Spring, mostly distance sites
+    + 2007 Fall
+    + 2007 Spring
+    + 2006 Fall
+
+
+
+\vspace{0.5cm}
+
+
+**MATH 1050 College Algebra**
+
+Functions: graphs, transformations, combinations, and inverses. Polynomial,
+rational, exponential, logarithmic functions, and applications. Systems of
+equations and matrices. Partial fractions.    
+
+* Software: `graphing calculators`
+    + 2004 Fall
+
+
+
+\vspace{0.5cm}
+
+
+
+**MATH 1010 Intermediate Algebra**    
+
+Review of introductory algebra concepts. Topics include manipulating and
+simplifying expressions, solving equations and inequalities, graphing equations, and inequalities. Real world applications including linear, quadratic, polynomial, rational, exponential, and radical functions.    
+
+* Software: *none*
+    + 2006 Summer
