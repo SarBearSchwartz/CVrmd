@@ -1,6 +1,6 @@
 ---
-name: "Dr. Sarah E"
-surname: "Schwartz"
+name: Dr. Sarah E. Schwartz
+surname: Schwartz
 position: "Research Assistant Professor"
 address: "Utah State University"
 phone: (435) 797-0169
@@ -10,12 +10,30 @@ twitter: USU_StatStudio
 github: SarBearSchwartz
 linkedin: SarBearSchwartz
 date: "`r format(Sys.time(), '%B %Y')`"
-output: vitae::moderncv
+output: vitae::hyndman
+headcolor: "0F2439"
+header_includes:
+  - \ExecuteBibliographyOptions{useprefix=true, doi=true, url=true}
+  - renewcommand{\bibfont}{\normalfont\fontsize{10}{12.4}\sffamily}
+  - \usepackage[spanish]{babel} 
 ---
 
+
+
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo = FALSE, 
+                      warning = FALSE, 
+                      message = FALSE)
+
+# library(devtools)
+# 
+# devtools::install_github("erex/vitae-etaremune")
+
+
 library(vitae)
+library(RefManageR)
+library(tidyverse)
 ```
 
 
@@ -91,64 +109,46 @@ and grant submissions",
   )
 ```
 
-
+\vspace{1cm}
 
 # Education
 
 ```{r}
 tibble::tribble(
   ~degree, ~year_span, ~school, ~location, ~bullet,
-  "PhD: Mathetatics, Specialization in Statistics",  
-  "2013-2017", 
-  "Utah State University", 
-  "Logan, Utah, USA", 
-  "Disertation: Exact Approaches for Bias Detection and Avoidance with Small, Sparce, or Correlated Categorical Data",
+
   "PhD: Mathetatics, Specialization in Statistics",  
   "2013-2017", 
   "Utah State University", 
   "Logan, Utah, USA",
   "Mentor: Dr. Chris Corcoran",
+
   "PhD: Mathetatics, Specialization in Statistics",  
   "2013-2017", 
   "Utah State University", 
   "Logan, Utah, USA",
   "TA: Lecturer and grader",
-    "PhD: Mathetatics, Specialization in Statistics",  
+
+  "PhD: Mathetatics, Specialization in Statistics",  
   "2013-2017", 
   "Utah State University", 
   "Logan, Utah, USA",
-  "RA: Simulation programmer, Cytel Software Inc.",  "PhD: Mathetatics, Specialization in Statistics",  
-  "2013-2017", 
-  "Utah State University", 
-  "Logan, Utah, USA",
-  "2015: Department Academic Excellence Award",
-    "PhD: Mathetatics, Specialization in Statistics",  
-  "2013-2017", 
-  "Utah State University", 
-  "Logan, Utah, USA",
-  "2014: Department Industrious Graduate Student Award",
+  "RA: Simulation programmer, Cytel Software Inc.",  
   
   
-  "MS: Statistics",  
-  "2004-2006", 
-  "Utah State University", 
-  "Logan, Utah, USA", 
-  "Thesis: Linear Mixed Effects Modeling of Neuropsychiatric Symptoms in Patients with Dementia",
+
   "MS: Statistics",  
   "2004-2006", 
   "Utah State University", 
   "Logan, Utah, USA", 
   "TA: Lecturer and grader",
-    "MS: Statistics",  
+  
+  "MS: Statistics",  
   "2004-2006", 
   "Utah State University", 
   "Logan, Utah, USA", 
   "RA: Statistician, Center for Epidemiology Studies",
-    "MS: Statistics",  
-  "2004-2006", 
-  "Utah State University", 
-  "Logan, Utah, USA", 
-  "2005: Department Graduate Student Teacher of the Year Award",  
+
   
   "BS: Math and Chem Secondary Education",  
   "1998-2000", 
@@ -164,6 +164,18 @@ tibble::tribble(
     why = bullet
   )
 ```
+
+
+\vspace{1cm}
+
+
+# Professional Memberships
+
+## American Statistical Association
+
+* October 2018 - Present
+
+\clearpage
 
 # Licenses
 
@@ -184,6 +196,10 @@ tibble::tribble(
 ```
 
 
+
+
+\vspace{1cm}
+
 # Software
 
 ```{r}
@@ -202,130 +218,428 @@ tibble::tribble(
   )
 ```
 
+\vspace{1cm}
+
+# Awards
+
+## Mathematics and Statistics Department, Utah State University
+
+* 2015: Department Academic Excellence Award
+* 2014: Department Industrious Graduate Student Award
+* 2005: Department Graduate Student Teacher of the Year Award
+
+
+
+\vspace{1cm}
+
+
+# Contracts, Grants and Sponsored Research
+
+## Grants
+
+```{r}
+tibble::tribble(
+  ~PIs, ~title, ~sponsor, ~amount, ~dates,
+  "Jody Clarke Midura, Victor Raymond Lee, Jessica Shumway, Sarah Schwartz",
+  "Research on the Development of An Assessment to Measure Kindergarten Children's Abilities to Reason Computationally With Mathematical Problem-Solving Skills",
+  "Sponsored by NSF, Federal",
+  "$1,120,807.00",
+  "2019-2022"
+) %>%  
+  vitae::detailed_entries(
+    what  = sponsor,
+    when  = dates,
+    with  = amount,
+    where = PIs,
+    why   = title
+  )
+```
+
+
+\vspace{1cm}
+
+
+# Service
+
+
+```{r}
+tibble::tribble(
+  ~order, ~what, ~position, ~year, ~dept, ~short,
+  "4",
+  "Committee Member",
+  "Search: Data Cluster (Office of Research Services)",
+  "2017 Fall",
+  "College of Education and Human Services, Utah State University",
+  "College",
+  "3",
+  "Committee Member",
+  "Borg Scholarship Committee",
+  "2019 Spring",
+  "Psychology Department, Utah State University",
+  "Department",
+  "2",
+  "Vice President",
+  "American Statistical Association",
+  "2018-2019",
+  "Utah Chapter",
+  "National",
+  "1",
+  "President",
+  "American Statistical Association",
+  "2019-2020",
+  "Utah Chapter",
+  "National"
+  
+) %>% 
+  dplyr::arrange(order) %>%  
+  vitae::detailed_entries(
+    what  = what,
+    when  = year,
+    with  = short,
+    where = dept,
+    why  = position,
+  ) 
+```
+
+\clearpage
+
+
+# Directed Student Learning 
+
+## PhD Committee Chair
+
+Current:
+
+* Amanda Hagman, Psychology - *Socio-Epidemiology Program*
+    + Successfully proposed: Spring 2019
+
+
+
+
+## PhD Committee Member
+
+Current:
+
+* Sarai Holdbrook *(Dr. Sandra Gillam)*, Disability Disciplines    
+    + Successfully proposed: Fall 2019
+    
+* Carla Orellana *(Dr. Ron Gillam)*, Disability Disciplines    
+    + Successfully proposed: Fall 2019 
+
+* J. Scott Crapo *(Dr. Kay Bradford)*, Human Development & Family Studies
+    + Successfully proposed: Spring 2019
+    
+* Josh Mayti *(Dr. JoAnne Tschanz)*, Psychology
+    + Scheduled proposed: Summer 2019
+    
+* Chris Johnson *(Dr. Chris Corcoran)*, Statistics   
+    + Committee Formed: Spring 2019
+    
+Past:    
+    
+* Eliza Jex *(Dr. Robert L. Morgan)*, Special Education
+    + Successfully defended: Spring 2019
+
+
+
+## Masters Committee Member
+
+Current:
+
+* Carly Fox *(Dr. Sandra Gillam)*, Disability Disciplines
+
+Past:
+
+* Fred Hintz *(Dr. Christian Geiser)*, Psychology
+    + Successfully defended: Spring 2018
+
+
+
+
 \clearpage
 
 # Publications
 
-## Submitted
+## Peer Reviewed Journals
 
-## 2016
+
+### Submitted or Under Review
+
 
 ```{r}
-# bibliography_entries("publications.bib")
+vitae::bibliography_entries("publications.bib") %>% 
+  dplyr::arrange(desc(year), desc(month), key) %>% 
+  dplyr::filter(bibtype == "Article") %>% 
+  dplyr::filter(is.na(year))
+```
+
+### 2019
+
+```{r}
+vitae::bibliography_entries("publications.bib") %>% 
+  dplyr::arrange(desc(year), desc(month), key) %>% 
+  dplyr::filter(bibtype == "Article") %>% 
+  dplyr::filter(year == 2019)
+```
+
+### 2018
+
+```{r}
+vitae::bibliography_entries("publications.bib") %>% 
+  dplyr::arrange(desc(year), desc(month), key) %>% 
+  dplyr::filter(bibtype == "Article") %>% 
+  dplyr::filter(year == 2018)
+```
+
+
+
+
+
+### 2017 and prior
+
+```{r}
+vitae::bibliography_entries("publications.bib") %>% 
+  dplyr::arrange(desc(year), desc(month), key) %>% 
+  dplyr::filter(bibtype == "Article") %>% 
+  dplyr::filter(year <= 2017)
+```
+
+
+## PhD Dissertation
+
+```{r}
+vitae::bibliography_entries("publications.bib") %>% 
+  dplyr::filter(bibtype == "PhdThesis") 
+```
+
+
+## Not Peer Reviewed
+
+### Online eBooks
+
+```{r}
+vitae::bibliography_entries("publications.bib") %>% 
+  dplyr::filter(bibtype == "Electronic") 
 ```
 
 
 
 \clearpage
 
-# Teaching: Utah State University - Graduate Courses
-
-\vspace{0.5cm}
-
-**PSY 7650: Multilevel and Marginal Models for the Social Sciences**
-
-Coverage of multilevel *(ie, mixed-effects, hierarchical linear)* and marginal
-*(ie, GEE)* models for both continuous and categorical outcomes. Includes
-application of these methods to many types of cross-sectional and longitudinal
-research designs *(eg, experimental, case-control, cohort, cross-over, complex
-sample, randomized controlled trials)*.    
-    
-    
-* Software: `R` and `R Studio`
-
-  + 2019 Fall *(scheduled)*
-  + 2018 Fall
-  + 2017 Fall
-  + 2016 Fall
-
-
-\vspace{0.5cm}
+# Teaching: Graduate Level Courses
 
 
 
-**PSY 6600: Statistical Foundataions *(previously: Research Design and Analysis I)* **
+## PSY 7650: Multilevel and Marginal Models for the Social Sciences
+
+Coverage of multilevel *(ie, mixed-effects, hierarchical linear)* and marginal *(ie, GEE)* models for both continuous and categorical outcomes. Includes application of these methods to many types of cross-sectional and longitudinal research designs *(eg, experimental, case-control, cohort, cross-over, complex sample, randomized controlled trials)*.  Software: `R` and `R Studio`.
+
+* 2019 Fall *(scheduled)*
+* 2018 Fall
+* 2017 Fall
+* 2016 Fall
+
+
+
+
+## PSY 6600: Statistical Foundataions *(previously: Research Design and Analysis I)* 
 
 Research design and statistical concepts for research in education, human
 services, and psychology, with emphasis on the selection and interpretation of
-statistical analyses.  Focus on ANOVA based methods. Includes a combination of traditional face-to-face and diatnace site students.  *(Summer sessions condensed to 7 weeks)*  
+statistical analyses.  Focus on inference and ANOVA based methods. Includes a combination of traditional face-to-face and distance-site students.  Software: `R` and `R Studio` starting in 2018, `SPSS` prior. *(Summer sessions condensed to 7 weeks)*    
+
+* 2020 Spring, Summer *(scheduled)*
+* 2019 Spring, Summer
+* 2018 Spring, Summer
+* 2017 Spring, Summer
+* 2016 Summer
+* 2015 Summer
 
 
-* Software: `R` and `R Studio`
-    + 2019 Summer
-    + 2019 Spring
-    + 2018 Summer
-    + 2018 Spring
+\vspace{1.5cm}
 
-* Software: `SPSS`
-   + 2017 Summer
-   + 2017 Spring
-   + 2016 Summer
-   + 2015 Summer
-
-
-
-
-\clearpage
-
-# Teaching: Utah State University - Undergraduate Courses
+# Teaching: Undergraduate Level Courses
 
 
 
-\vspace{0.5cm}
+## STAT 2000: Statistical Methods
+
+Introduction to statistical concepts, graphical techniques, probability, distributions, estimation, one and two sample testing, chi-square tests, and simple linear regression, one-way ANOVA. Software: `StatCrunch`.
+
+* 2014 Spring, Fall
+* 2005 Spring, Fall
 
 
 
-**STAT 2000: Statistical Methods**
 
-Introduction to statistical concepts, graphical techniques, probability, distributions, estimation, one and two sample testing, chi-square tests, and simple
-linear regression, one-way ANOVA.    
+## STAT 1040 Introduction to Statistics
 
-* Software: `StatCrunch`
-    + 2014 Fall
-    + 2014 Spring
-    + 2005 Fall
-    + 2005 Spring
+Descriptive and inferential statistical methods. Emphasis on conceptual understanding and statistical thinking. Examples presented from many different areas.  Software: *none*.    
 
-
-\vspace{0.5cm}
+* 2008 Spring *(mostly distance sites)*
+* 2007 Spring, Fall
+* 2006 Fall
 
 
 
-**STAT 1040 Introduction to Statistics**
 
-Descriptive and inferential statistical methods. Emphasis on conceptual understanding and statistical thinking. Examples presented from many different
-areas.    
+## MATH 1050 College Algebra
 
-* Software: *none*
-    + 2008 Spring, mostly distance sites
-    + 2007 Fall
-    + 2007 Spring
-    + 2006 Fall
+Functions: graphs, transformations, combinations, and inverses. Polynomial, rational, exponential, logarithmic functions, and applications. Systems of equations and matrices. Partial fractions.  Software: `graphing calculators`.    
+
+* 2004 Fall
 
 
 
-\vspace{0.5cm}
-
-
-**MATH 1050 College Algebra**
-
-Functions: graphs, transformations, combinations, and inverses. Polynomial,
-rational, exponential, logarithmic functions, and applications. Systems of
-equations and matrices. Partial fractions.    
-
-* Software: `graphing calculators`
-    + 2004 Fall
-
-
-
-\vspace{0.5cm}
-
-
-
-**MATH 1010 Intermediate Algebra**    
+## MATH 1010 Intermediate Algebra   
 
 Review of introductory algebra concepts. Topics include manipulating and
 simplifying expressions, solving equations and inequalities, graphing equations, and inequalities. Real world applications including linear, quadratic, polynomial, rational, exponential, and radical functions.    
 
-* Software: *none*
-    + 2006 Summer
+* 2006 Summer
+
+\clearpage
+
+
+# Teaching: College-wide Workshop Series 
+
+The Statistical Consulting Studio: 2-3 hour sessions held several times a semester, open to faculty and graduate students.    
+
+
+## Time-to-Event Modeling: Survival Analysis (SPSS & R)
+
+In some situations, we are most concerned with monitoring participants to see if an event like death or relapse occurs, yet due to time constraints, attrition, and other factors some participants are censored (eg. KM plots and Cox Regression).
+
+* 2019 Spring
+* 2018 Spring
+
+
+
+## Intro to Multilevel & Marginal Models: MLM, HLM, & GEE
+
+Where your participants are nested (eg. students in classes) or you are monitoring repeated measurements (eg. longitudinal), correlation between observations should not be ignored, but leveraged.  This workshop will give you the foundation to get started.
+
+* 2019 Spring
+* 2018 Spring
+
+
+
+
+## Random Forests: Classification and Regression Trees
+
+Introduction to a novel approach for prediction and variable selection, especially dealing with large numbers of potential predictors and allowing for interactions, collinearity, missingness, and unbalancedness across groups.  Introduction to CART trees and random forests focus on variable screening and examples in the literature.   
+
+* 2019 Spring
+* 2017 Spring, Fall
+
+
+
+
+## Effect Size and Power Analysis Using `G*Power`   
+
+Review effect size measures for various types of study designs and learn how to report them appropriately, including converting between various effect size measures. Cover power analysis and learn to use the free G*Power software,  as well as conversion Excel files 
+
+* 2018 Fall
+* 2017 Fall
+* 2015 Fall
+
+
+## Missing Data and Multiple Imputations
+
+Cover: (1) Identification of patterns and sources of missingness in data, (2) diagnosing mechanizms of missingness, and (3) traditional and modern techniques for dealing with missing data...including multiple imputation methods
+
+* 2018 Fall
+
+
+## Powerful Publishable Plots: The Grammar of Graphics
+  
+The do’s and don’t of good graphics, not specifically to any one software package.
+
+* 2018 Fall
+* 2016 Spring
+
+
+## Drop in Statistical Software Summer Sessions
+
+Installation, orientation, & workflow, Importing & wrangling data, Summary tables & graphics, Running Analyses, Tabulation & visualization of results...R and SPSS
+
+* 2018 Fall *(3 sessions)*
+* 2018 Summer *(6 sessions)*
+
+
+
+## Reproducible Workflow: Intro to SPSS, via Syntax
+
+Do you use SPSS only by clicking on the menus? Have you ever wanted to learn how to use SPSS syntax? Learn how to be more efficient, have more control, and save time, by using syntax for data management and statistical analysis. No SPSS background required.
+
+* 2018 Spring
+
+## Exact Methods for Categorical Data (SPSS, R, & StatXact)
+
+Not all data is `normal’ or continuous.  Other samples are small, sparse, or highly correlated.   If standard ANOVA and Regression methods are out, what can you do instead?  Come find out about methods you can use in these situations.
+
+* 2018 Spring
+
+
+
+
+## Multiple Linear Regression Refresher (SPSS & R)
+
+Did you know that ANOVA is just a special case of regression? Regression permits the inclusion of continuous predictors, customized interactions, quadratic terms, and can better model the results of observational studies.
+
+* 2018 Spring
+
+
+
+## Logistic Regression
+
+Introduction to modeling dichotomous (binary) outcomes and interpreting results, including interactions.  Focus on demystify odds, log odds, odds ratios, and probabilities, while also covering assumptions and interpretation of results.
+
+* 2017, Fall
+
+
+## GEE: Generalized Estimating Equations
+
+Introduction to GEEs for clustered and nested data (cross-sectional) and repeated measures (longitudinal)    
+
+* 2017 Spring
+
+
+## Intro to R: the Tidyverse way
+
+Introduction to R via R Studio using the tidyverse packages import, tidy, transform, visualization, models, and results    
+
+* 2016 Fall
+  
+  
+
+
+  
+## Explore Your Data with ggplot in R
+
+Interactive, hands-on workshop assumes some familiarity with R
+
+* 2016 Spring
+
+
+## Introduction to R & R Studio, For Absolute Beginners
+
+Lecture and Interactive, hands-on workshop suggest coming with a laptop preloaded with R and R Studio
+
+* 2015 Fall
+
+
+\vspace{1.5cm}
+
+# Talks
+
+## USU Data Analytics Student Seminar Series
+
+What should I "git"? Getting started with Git and GitHub using the Git Kracken interface for version control and collaborative research.
+
+* Jan. 19, 2019
+
+
+
+
+
