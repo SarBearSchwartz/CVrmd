@@ -1,0 +1,22 @@
+"0","data %>% "
+"0","  dplyr::group_by(""Vignette"" = vin_gender, "
+"0","                  vin_ethnic) %>% "
+"0","  dplyr::summarise(var = var(asd_likely)) %>% "
+"0","  dplyr::ungroup() %>% "
+"0","  tidyr::pivot_wider(names_from = vin_ethnic,"
+"0","                     values_from = var) %>% "
+"0","  pander::pander(caption = ""Variance of ASD Likelyhood Ratings, by Vignette Condition"")"
+"2","`summarise()` has grouped output by 'Vignette'. You can override using the `.groups` argument.
+"
+"1","
+-------------------------------------------
+ Vignette   Asian   Black   Latinx   White 
+---------- ------- ------- -------- -------
+  Female     634    795.3   557.9    1078  
+
+   Male     632.3   801.7    1167    576.1 
+-------------------------------------------
+
+Table: Variance of ASD Likelyhood Ratings, by Vignette Condition
+
+"

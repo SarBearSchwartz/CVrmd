@@ -1,0 +1,22 @@
+"0","fit_anova_conf_posthoc %>% "
+"0","  pander::pander(caption = ""Post Hoc Pairwise Compairisons of Confidence in ASD Likelihood Ratings, by Vignette Student's Race/Ethnicity with Tukey's HSD Correction for Multiple Compairisons"")"
+"1","
+----------------------------------------------------------------------------
+ group1   group2   estimate    SE    df    t.ratio   p.value   stars    g   
+-------- -------- ---------- ------ ----- --------- --------- ------- ------
+ Asian    Black     15.97     5.99   221    2.67      .041       *     0.5  
+
+ Asian    Latinx    14.25     6.04   221    2.36      .088             0.45 
+
+ Asian    White     11.39     6.35   221    1.79      .279             0.36 
+
+ Black    Latinx    -1.73     5.69   221     0.3       .99             0.05 
+
+ Black    White     -4.58     6.02   221    0.76      .872             0.14 
+
+ Latinx   White     -2.86     6.07   221    0.47      .965             0.09 
+----------------------------------------------------------------------------
+
+Table: Post Hoc Pairwise Compairisons of Confidence in ASD Likelihood Ratings, by Vignette Student's Race/Ethnicity with Tukey's HSD Correction for Multiple Compairisons
+
+"

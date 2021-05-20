@@ -1,0 +1,5 @@
+"0","fit_lm_conf_3 <- data_lm %>% "
+"0","  lm(asd_conf ~ vin_ethnic + "
+"0","       race_2 + degree  + yearsinpractice + trainingasd + cldstudents + "
+"0","       perceivedasdknowledge + askspr_stand_score,"
+"0","     data = .)"

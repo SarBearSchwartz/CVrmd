@@ -1,0 +1,36 @@
+"0","fit_anova_lik_posthoc %>% "
+"0","  dplyr::select(""Gender"" = vin_gender, "
+"0","                everything()) %>% "
+"0","  pander::pander(caption = ""Post Hoc Pairwise Compairisons of ASD Likelihood Ratings, by Vignette Student's Race/Ethnicity within each Vignette Student Gender, with Tukey's HSD Correction for Multiple Compairisons"")"
+"1","
+-------------------------------------------------------------------------------------
+ Gender   group1   group2   estimate    SE    df    t.ratio   p.value   stars    g   
+-------- -------- -------- ---------- ------ ----- --------- --------- ------- ------
+ Female   Asian    Black     15.26     7.37   221    2.07      .166             0.55 
+
+ Female   Asian    Latinx     27.4     7.54   221    3.63      .002      **     0.98 
+
+ Female   Asian    White      10.2     8.19   221    1.24      .599             0.37 
+
+ Female   Black    Latinx    12.14     7.16   221     1.7      .328             0.43 
+
+ Female   Black    White     -5.07     7.84   221    0.65      .917             0.18 
+
+ Female   Latinx   White     -17.21     8     221    2.15      .141             0.62 
+
+  Male    Asian    Black      7.17     7.45   221    0.96      .771             0.26 
+
+  Male    Asian    Latinx    -5.41     7.4    221    0.73      .885             0.19 
+
+  Male    Asian    White      2.22     7.51   221     0.3      .991             0.08 
+
+  Male    Black    Latinx    -12.59    6.93   221    1.82      .268             0.45 
+
+  Male    Black    White     -4.96     7.04   221     0.7      .895             0.18 
+
+  Male    Latinx   White      7.63     6.98   221    1.09      .694             0.27 
+-------------------------------------------------------------------------------------
+
+Table: Post Hoc Pairwise Compairisons of ASD Likelihood Ratings, by Vignette Student's Race/Ethnicity within each Vignette Student Gender, with Tukey's HSD Correction for Multiple Compairisons
+
+"

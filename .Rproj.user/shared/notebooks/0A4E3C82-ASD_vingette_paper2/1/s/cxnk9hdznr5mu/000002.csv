@@ -1,0 +1,41 @@
+"0","anova(fit_mlm_6) %>% 
+  xtable::xtable(caption = ""Model 6, Type III Analysis of Variance Table with Satterthwaite's method"")%>% 
+  print(caption.placement = ""top"")
+"
+"1","% latex table generated in R 4.0.3 by xtable 1.8-4 package
+% Tue Mar 30 15:30:04 2021
+\begin{table}[ht]
+\centering
+\caption{Model 6, Type III Analysis of Variance Table with Satterthwaite's method} 
+\begin{tabular}{lrrrrrr}
+  \hline
+ & Sum Sq & Mean Sq & NumDF & DenDF & F value & Pr($>$F) \\ 
+  \hline
+dx & 12982.67 & 2163.78 & 6.00 & 1322.37 & 9.14 & 0.0000 \\ 
+  vin\_gender & 206.86 & 206.86 & 1.00 & 414.41 & 0.87 & 0.3503 \\ 
+  vin\_ethnic & 1417.12 & 472.37 & 3.00 & 420.62 & 2.00 & 0.1139 \\ 
+  conf & 48374.53 & 48374.53 & 1.00 & 893.15 & 204.44 & 0.0000 \\ 
+  race2 & 840.50 & 140.08 & 6.00 & 208.93 & 0.59 & 0.7365 \\ 
+  age & 3.79 & 3.79 & 1.00 & 206.33 & 0.02 & 0.8994 \\ 
+  degree & 30.97 & 15.48 & 2.00 & 210.84 & 0.07 & 0.9367 \\ 
+  yearsinpractice & 180.15 & 180.15 & 1.00 & 209.06 & 0.76 & 0.3839 \\ 
+  trainingasd & 132.14 & 132.14 & 1.00 & 211.02 & 0.56 & 0.4557 \\ 
+  cldstudents & 342.67 & 85.67 & 4.00 & 210.83 & 0.36 & 0.8354 \\ 
+  femalestudents & 1691.45 & 338.29 & 5.00 & 209.19 & 1.43 & 0.2148 \\ 
+  perceivedasdknowledge & 0.13 & 0.13 & 1.00 & 207.51 & 0.00 & 0.9815 \\ 
+  askspr\_stand\_score & 143.93 & 143.93 & 1.00 & 209.70 & 0.61 & 0.4363 \\ 
+  dx:vin\_gender & 239.81 & 39.97 & 6.00 & 1322.78 & 0.17 & 0.9851 \\ 
+  dx:vin\_ethnic & 4142.59 & 230.14 & 18.00 & 1321.65 & 0.97 & 0.4892 \\ 
+  vin\_gender:vin\_ethnic & 1729.32 & 576.44 & 3.00 & 416.69 & 2.44 & 0.0642 \\ 
+  dx:conf & 53438.88 & 8906.48 & 6.00 & 1333.49 & 37.64 & 0.0000 \\ 
+  vin\_gender:conf & 195.11 & 195.11 & 1.00 & 842.45 & 0.82 & 0.3641 \\ 
+  vin\_ethnic:conf & 2856.56 & 952.19 & 3.00 & 866.87 & 4.02 & 0.0074 \\ 
+  dx:vin\_gender:vin\_ethnic & 3448.07 & 191.56 & 18.00 & 1321.25 & 0.81 & 0.6906 \\ 
+  dx:vin\_gender:conf & 1342.72 & 223.79 & 6.00 & 1333.94 & 0.95 & 0.4610 \\ 
+  dx:vin\_ethnic:conf & 6868.65 & 381.59 & 18.00 & 1334.46 & 1.61 & 0.0498 \\ 
+  vin\_gender:vin\_ethnic:conf & 8057.60 & 2685.87 & 3.00 & 869.22 & 11.35 & 0.0000 \\ 
+  dx:vin\_gender:vin\_ethnic:conf & 11331.71 & 629.54 & 18.00 & 1333.84 & 2.66 & 0.0002 \\ 
+   \hline
+\end{tabular}
+\end{table}
+"

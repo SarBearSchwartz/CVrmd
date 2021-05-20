@@ -1,0 +1,774 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 8 February 2019
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,]{moderncv}
+
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+
+\definecolor{color0}{rgb}{0,0,0}% black
+\definecolor{color1}{HTML}{0F2439}% custom
+\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+
+\usepackage[scaled=0.86]{DejaVuSansMono}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\def\donothing#1{#1}
+\def\emaillink#1{#1}
+
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75,footskip=60pt]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+
+
+% personal data
+\name{Dr.~Sarah E. Schwartz}{Schwartz}
+\title{Research Assistant Professor}
+\address{Utah State University}{}{}
+\phone[mobile]{(435) 797-0169} % Phone number
+\email{\donothing{\href{mailto:Sarah.Schwartz@usu.edu}{\nolinkurl{Sarah.Schwartz@usu.edu}}}}
+\homepage{SarahSchwartzStats.com} % Personal website
+\social[linkedin]{SarBearSchwartz}
+\social[twitter]{USU\_StatStudio}
+\social[github]{SarBearSchwartz}
+% \extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+
+
+
+
+% Pandoc CSL macros
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[3] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+
+
+\hypertarget{appointments}{%
+\section{Appointments}\label{appointments}}
+
+\nopagebreak
+    \cventry{2015-present}{Assistant Research Professor}{Psychology Department, College of Education and Human Services}{Utah State University}{}{\begin{itemize}%
+\item Director, The Statistical Consulting Studio%
+\item Instructor, graduate student quantitatice methods and statistics courses%
+\end{itemize}}
+    \cventry{2013-2015}{Statistician}{Office of Research Services, College of Education and Human Services}{Utah State University}{}{\begin{itemize}%
+\item Acting Director, Office of Methodological and Data Sciences%
+\item Instructor, graduate student quantitatice methods and statistics courses%
+\end{itemize}}
+    \cventry{2005-2013}{Statistician and Data Manager}{Center for Epidemiology}{Utah State University}{}{\begin{itemize}%
+\item Managed databases, clean data, and prepare custom datasets%
+\item Performed statistical analyses and prepared publications, posters, presentations,
+and grant submissions%
+\item Worked under three main grants and many co-investigators: University of Utah,
+  BYU, Duke, John Hopkins, University of Maryland, ect.%
+\end{itemize}}
+    \cventry{2012}{Data Manager}{Kenoi Genetics Lab}{Brigham Young University}{}{\begin{itemize}%
+\item Managed databases and prepare custom datasets%
+\end{itemize}}
+    \cventry{2006-2008}{Adjunct Lecturer}{Mathematics and Statistics Department}{Utah State University}{}{\begin{itemize}%
+\item Traditional, evening, and distance courses%
+\end{itemize}}
+    \cventry{2000-2004}{High School Teacher, Math and Science}{}{}{}{\begin{itemize}%
+\item Sky View High School, Smithfield, Utah%
+\item Logan River Academy, Logan, Utah%
+\end{itemize}}
+
+\vspace{1cm}
+
+\hypertarget{education}{%
+\section{Education}\label{education}}
+
+\nopagebreak
+    \cventry{2013-2017}{PhD: Mathetatics, Specialization in Statistics}{Utah State University}{Logan, Utah, USA}{}{\begin{itemize}%
+\item Mentor: Dr. Chris Corcoran%
+\item TA: Lecturer and grader%
+\item RA: Simulation programmer, Cytel Software Inc.%
+\end{itemize}}
+    \cventry{2004-2006}{MS: Statistics}{Utah State University}{Logan, Utah, USA}{}{\begin{itemize}%
+\item TA: Lecturer and grader%
+\item RA: Statistician, Center for Epidemiology Studies%
+\end{itemize}}
+    \cventry{1998-2000}{BS: Math and Chem Secondary Education}{Utah State University}{Logan, Utah, USA}{}{\begin{itemize}%
+\item Student Teaching: Sky View High School, Smithfield, Utah%
+\end{itemize}}
+
+\vspace{1cm}
+
+\hypertarget{professional-memberships}{%
+\section{Professional Memberships}\label{professional-memberships}}
+
+\hypertarget{american-statistical-association}{%
+\subsection{American Statistical
+Association}\label{american-statistical-association}}
+
+\begin{itemize}
+\tightlist
+\item
+  October 2018 - Present
+\end{itemize}
+
+\clearpage
+
+\hypertarget{licenses}{%
+\section{Licenses}\label{licenses}}
+
+\nopagebreak
+    \cventry{2001-2009}{Secondary Education Teaching License}{}{State of Utah}{}{\begin{itemize}%
+\item Endorsements: mathematics level 4 and chemistry%
+\end{itemize}}
+
+\vspace{1cm}
+
+\hypertarget{software}{%
+\section{Software}\label{software}}
+
+\nopagebreak
+    \cventry{}{R, R Studio, and R Markdown (LaTeX)}{}{}{}{\begin{itemize}%
+\item Data cleaning and wrangling, statistical analysis, and reproducible reporting%
+\end{itemize}}
+    \cventry{}{SAS, SPSS, MPlus, and G*Power}{}{}{}{\begin{itemize}%
+\item Data cleaning and wrangling, and statistical analysis%
+\end{itemize}}
+    \cventry{}{REDCap and Qualtrics}{}{}{}{\begin{itemize}%
+\item Creating forms and collecting data%
+\end{itemize}}
+
+\vspace{1cm}
+
+\hypertarget{awards}{%
+\section{Awards}\label{awards}}
+
+\hypertarget{mathematics-and-statistics-department-utah-state-university}{%
+\subsection{Mathematics and Statistics Department, Utah State
+University}\label{mathematics-and-statistics-department-utah-state-university}}
+
+\begin{itemize}
+\tightlist
+\item
+  2015: Department Academic Excellence Award
+\item
+  2014: Department Industrious Graduate Student Award
+\item
+  2005: Department Graduate Student Teacher of the Year Award
+\end{itemize}
+
+\vspace{1cm}
+
+\hypertarget{contracts-grants-and-sponsored-research}{%
+\section{Contracts, Grants and Sponsored
+Research}\label{contracts-grants-and-sponsored-research}}
+
+\hypertarget{grants}{%
+\subsection{Grants}\label{grants}}
+
+\nopagebreak
+    \cventry{2019-2022}{Sponsored by NSF, Federal}{\$1,120,807.00}{Jody Clarke Midura, Victor Raymond Lee, Jessica Shumway, Sarah Schwartz}{}{\begin{itemize}%
+\item Research on the Development of An Assessment to Measure Kindergarten Children's Abilities to Reason Computationally With Mathematical Problem-Solving Skills%
+\end{itemize}}
+
+\vspace{1cm}
+
+\hypertarget{service}{%
+\section{Service}\label{service}}
+
+\nopagebreak
+    \cventry{2019-2020}{President}{National}{Utah Chapter}{}{\begin{itemize}%
+\item American Statistical Association%
+\end{itemize}}
+    \cventry{2018-2019}{Vice President}{National}{Utah Chapter}{}{\begin{itemize}%
+\item American Statistical Association%
+\end{itemize}}
+    \cventry{2019 Spring}{Committee Member}{Department}{Psychology Department, Utah State University}{}{\begin{itemize}%
+\item Borg Scholarship Committee%
+\end{itemize}}
+    \cventry{2017 Fall}{Committee Member}{College}{College of Education and Human Services, Utah State University}{}{\begin{itemize}%
+\item Search: Data Cluster (Office of Research Services)%
+\end{itemize}}
+
+\clearpage
+
+\hypertarget{directed-student-learning}{%
+\section{Directed Student Learning}\label{directed-student-learning}}
+
+\hypertarget{phd-committee-chair}{%
+\subsection{PhD Committee Chair}\label{phd-committee-chair}}
+
+Current:
+
+\begin{itemize}
+\tightlist
+\item
+  Amanda Hagman, Psychology - \emph{Socio-Epidemiology Program}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Successfully proposed: Spring 2019
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{phd-committee-member}{%
+\subsection{PhD Committee Member}\label{phd-committee-member}}
+
+Current:
+
+\begin{itemize}
+\tightlist
+\item
+  Sarai Holdbrook \emph{(Dr.~Sandra Gillam)}, Disability Disciplines
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Successfully proposed: Fall 2019
+  \end{itemize}
+\item
+  Carla Orellana \emph{(Dr.~Ron Gillam)}, Disability Disciplines
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Successfully proposed: Fall 2019
+  \end{itemize}
+\item
+  J. Scott Crapo \emph{(Dr.~Kay Bradford)}, Human Development \& Family
+  Studies
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Successfully proposed: Spring 2019
+  \end{itemize}
+\item
+  Josh Mayti \emph{(Dr.~JoAnne Tschanz)}, Psychology
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Scheduled proposed: Summer 2019
+  \end{itemize}
+\item
+  Chris Johnson \emph{(Dr.~Chris Corcoran)}, Statistics
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Committee Formed: Spring 2019
+  \end{itemize}
+\end{itemize}
+
+Past:
+
+\begin{itemize}
+\tightlist
+\item
+  Eliza Jex \emph{(Dr.~Robert L. Morgan)}, Special Education
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Successfully defended: Spring 2019
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{masters-committee-member}{%
+\subsection{Masters Committee Member}\label{masters-committee-member}}
+
+Current:
+
+\begin{itemize}
+\tightlist
+\item
+  Carly Fox \emph{(Dr.~Sandra Gillam)}, Disability Disciplines
+\end{itemize}
+
+Past:
+
+\begin{itemize}
+\tightlist
+\item
+  Fred Hintz \emph{(Dr.~Christian Geiser)}, Psychology
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Successfully defended: Spring 2018
+  \end{itemize}
+\end{itemize}
+
+\clearpage
+
+\hypertarget{publications}{%
+\section{Publications}\label{publications}}
+
+\hypertarget{peer-reviewed-journals}{%
+\subsection{Peer Reviewed Journals}\label{peer-reviewed-journals}}
+
+\nopagebreak
+    \cventry{2020}{Cluster randomized trial of a multicomponent school-based program in Mexico to prevent behavioral problems and develop social skills in children}{NGA Buenabad, RS Ramos, S Schwartz, MLG López, ADD Juárez, ...}{Child \& Youth Care Forum}{}{\empty}
+    \cventry{2020}{The ASKSP Revised (ASKSP-R) as a measure of ASD knowledge for professional populations}{MB McClain, B Harris, CR Haverkamp, ME Golson, SE Schwartz}{Journal of autism and developmental disorders}{}{\empty}
+    \cventry{2020}{Reactions to Witnessing Ethnic Microaggressions: An Experimental Study}{L Torres, AK Reveles, F Mata-Greve, S Schwartz, ...}{Journal of Social and Clinical Psychology}{}{\empty}
+    \cventry{2020}{School-clinic care coordination for youth with ASD: A national survey of school psychologists}{MB McClain, JD Shahidullah, KR Mezher, CR Haverkamp, KJ Benallie, ...}{Journal of autism and developmental disorders}{}{\empty}
+    \cventry{2020}{Wingate anaerobic test reliability on the Velotron with ice hockey players}{RF Bringhurst, DR Wagner, S Schwartz}{The Journal of Strength \& Conditioning Research}{}{\empty}
+    \cventry{2020}{Innovative identification of substance use predictors: machine learning in a national sample of Mexican children}{AL Vázquez, MMD Rodríguez, TS Barrett, S Schwartz, NGA Buenabad, ...}{Prevention Science}{}{\empty}
+    \cventry{2020}{Knowledge of Autism Spectrum Disorder Among School Psychology Graduate Students}{B Harris, MB McClain, S Schwartz, CR Haverkamp}{Contemporary School Psychology}{}{\empty}
+    \cventry{2020}{Auditory distraction in school-age children relative to individual differences in working memory capacity}{NK Nagaraj, BM Magimairaj, S Schwartz}{Attention, Perception, \& Psychophysics}{}{\empty}
+    \cventry{2020}{Evaluation of the autism spectrum rating scales in a diverse, nonclinical sample}{MB McClain, B Harris, SE Schwartz, ME Golson}{Journal of Psychoeducational Assessment}{}{\empty}
+    \cventry{2020}{Validation of the ASKSG with a Parent Sample in the United States}{KJ Benallie, MB McClain, B Harris, SE Schwartz}{Journal of autism and developmental disorders}{}{\empty}
+    \cventry{2020}{Differential Item and Test Functioning of the Autism Spectrum Rating Scales: A Follow-Up Evaluation in a Diverse, Nonclinical Sample}{MB McClain, B Harris, SE Schwartz, ME Golson}{Journal of Psychoeducational Assessment}{}{\empty}
+
+\hypertarget{submitted-or-under-review}{%
+\subsubsection{Submitted or Under
+Review}\label{submitted-or-under-review}}
+
+\hypertarget{section}{%
+\subsubsection{2019}\label{section}}
+
+\hypertarget{section-1}{%
+\subsubsection{2018}\label{section-1}}
+
+\hypertarget{and-prior}{%
+\subsubsection{2017 and prior}\label{and-prior}}
+
+\hypertarget{phd-dissertation}{%
+\subsection{PhD Dissertation}\label{phd-dissertation}}
+
+\hypertarget{not-peer-reviewed}{%
+\subsection{Not Peer Reviewed}\label{not-peer-reviewed}}
+
+\hypertarget{online-ebooks}{%
+\subsubsection{Online eBooks}\label{online-ebooks}}
+
+\clearpage
+
+\hypertarget{teaching-graduate-level-courses}{%
+\section{Teaching: Graduate Level
+Courses}\label{teaching-graduate-level-courses}}
+
+\hypertarget{psy-7650-multilevel-and-marginal-models-for-the-social-sciences}{%
+\subsection{PSY 7650: Multilevel and Marginal Models for the Social
+Sciences}\label{psy-7650-multilevel-and-marginal-models-for-the-social-sciences}}
+
+Coverage of multilevel \emph{(ie, mixed-effects, hierarchical linear)}
+and marginal \emph{(ie, GEE)} models for both continuous and categorical
+outcomes. Includes application of these methods to many types of
+cross-sectional and longitudinal research designs \emph{(eg,
+experimental, case-control, cohort, cross-over, complex sample,
+randomized controlled trials)}. Software: \texttt{R} and
+\texttt{R\ Studio}.
+
+\begin{itemize}
+\tightlist
+\item
+  2019 Fall \emph{(scheduled)}
+\item
+  2018 Fall
+\item
+  2017 Fall
+\item
+  2016 Fall
+\end{itemize}
+
+\hypertarget{psy-6600-statistical-foundataions-previously-research-design-and-analysis-i}{%
+\subsection{\texorpdfstring{PSY 6600: Statistical Foundataions
+\emph{(previously: Research Design and Analysis
+I)}}{PSY 6600: Statistical Foundataions (previously: Research Design and Analysis I)}}\label{psy-6600-statistical-foundataions-previously-research-design-and-analysis-i}}
+
+Research design and statistical concepts for research in education,
+human services, and psychology, with emphasis on the selection and
+interpretation of statistical analyses. Focus on inference and ANOVA
+based methods. Includes a combination of traditional face-to-face and
+distance-site students. Software: \texttt{R} and \texttt{R\ Studio}
+starting in 2018, \texttt{SPSS} prior. \emph{(Summer sessions condensed
+to 7 weeks)}
+
+\begin{itemize}
+\tightlist
+\item
+  2020 Spring, Summer \emph{(scheduled)}
+\item
+  2019 Spring, Summer
+\item
+  2018 Spring, Summer
+\item
+  2017 Spring, Summer
+\item
+  2016 Summer
+\item
+  2015 Summer
+\end{itemize}
+
+\vspace{1.5cm}
+
+\hypertarget{teaching-undergraduate-level-courses}{%
+\section{Teaching: Undergraduate Level
+Courses}\label{teaching-undergraduate-level-courses}}
+
+\hypertarget{stat-2000-statistical-methods}{%
+\subsection{STAT 2000: Statistical
+Methods}\label{stat-2000-statistical-methods}}
+
+Introduction to statistical concepts, graphical techniques, probability,
+distributions, estimation, one and two sample testing, chi-square tests,
+and simple linear regression, one-way ANOVA. Software:
+\texttt{StatCrunch}.
+
+\begin{itemize}
+\tightlist
+\item
+  2014 Spring, Fall
+\item
+  2005 Spring, Fall
+\end{itemize}
+
+\hypertarget{stat-1040-introduction-to-statistics}{%
+\subsection{STAT 1040 Introduction to
+Statistics}\label{stat-1040-introduction-to-statistics}}
+
+Descriptive and inferential statistical methods. Emphasis on conceptual
+understanding and statistical thinking. Examples presented from many
+different areas. Software: \emph{none}.
+
+\begin{itemize}
+\tightlist
+\item
+  2008 Spring \emph{(mostly distance sites)}
+\item
+  2007 Spring, Fall
+\item
+  2006 Fall
+\end{itemize}
+
+\hypertarget{math-1050-college-algebra}{%
+\subsection{MATH 1050 College Algebra}\label{math-1050-college-algebra}}
+
+Functions: graphs, transformations, combinations, and inverses.
+Polynomial, rational, exponential, logarithmic functions, and
+applications. Systems of equations and matrices. Partial fractions.
+Software: \texttt{graphing\ calculators}.
+
+\begin{itemize}
+\tightlist
+\item
+  2004 Fall
+\end{itemize}
+
+\hypertarget{math-1010-intermediate-algebra}{%
+\subsection{MATH 1010 Intermediate
+Algebra}\label{math-1010-intermediate-algebra}}
+
+Review of introductory algebra concepts. Topics include manipulating and
+simplifying expressions, solving equations and inequalities, graphing
+equations, and inequalities. Real world applications including linear,
+quadratic, polynomial, rational, exponential, and radical functions.
+
+\begin{itemize}
+\tightlist
+\item
+  2006 Summer
+\end{itemize}
+
+\clearpage
+
+\hypertarget{teaching-college-wide-workshop-series}{%
+\section{Teaching: College-wide Workshop
+Series}\label{teaching-college-wide-workshop-series}}
+
+The Statistical Consulting Studio: 2-3 hour sessions held several times
+a semester, open to faculty and graduate students.
+
+\hypertarget{time-to-event-modeling-survival-analysis-spss-r}{%
+\subsection{Time-to-Event Modeling: Survival Analysis (SPSS \&
+R)}\label{time-to-event-modeling-survival-analysis-spss-r}}
+
+In some situations, we are most concerned with monitoring participants
+to see if an event like death or relapse occurs, yet due to time
+constraints, attrition, and other factors some participants are censored
+(eg. KM plots and Cox Regression).
+
+\begin{itemize}
+\tightlist
+\item
+  2019 Spring
+\item
+  2018 Spring
+\end{itemize}
+
+\hypertarget{intro-to-multilevel-marginal-models-mlm-hlm-gee}{%
+\subsection{Intro to Multilevel \& Marginal Models: MLM, HLM, \&
+GEE}\label{intro-to-multilevel-marginal-models-mlm-hlm-gee}}
+
+Where your participants are nested (eg. students in classes) or you are
+monitoring repeated measurements (eg. longitudinal), correlation between
+observations should not be ignored, but leveraged. This workshop will
+give you the foundation to get started.
+
+\begin{itemize}
+\tightlist
+\item
+  2019 Spring
+\item
+  2018 Spring
+\end{itemize}
+
+\hypertarget{random-forests-classification-and-regression-trees}{%
+\subsection{Random Forests: Classification and Regression
+Trees}\label{random-forests-classification-and-regression-trees}}
+
+Introduction to a novel approach for prediction and variable selection,
+especially dealing with large numbers of potential predictors and
+allowing for interactions, collinearity, missingness, and unbalancedness
+across groups. Introduction to CART trees and random forests focus on
+variable screening and examples in the literature.
+
+\begin{itemize}
+\tightlist
+\item
+  2019 Spring
+\item
+  2017 Spring, Fall
+\end{itemize}
+
+\hypertarget{effect-size-and-power-analysis-using-gpower}{%
+\subsection{\texorpdfstring{Effect Size and Power Analysis Using
+\texttt{G*Power}}{Effect Size and Power Analysis Using G*Power}}\label{effect-size-and-power-analysis-using-gpower}}
+
+Review effect size measures for various types of study designs and learn
+how to report them appropriately, including converting between various
+effect size measures. Cover power analysis and learn to use the free
+G*Power software, as well as conversion Excel files
+
+\begin{itemize}
+\tightlist
+\item
+  2018 Fall
+\item
+  2017 Fall
+\item
+  2015 Fall
+\end{itemize}
+
+\hypertarget{missing-data-and-multiple-imputations}{%
+\subsection{Missing Data and Multiple
+Imputations}\label{missing-data-and-multiple-imputations}}
+
+Cover: (1) Identification of patterns and sources of missingness in
+data, (2) diagnosing mechanizms of missingness, and (3) traditional and
+modern techniques for dealing with missing data\ldots including multiple
+imputation methods
+
+\begin{itemize}
+\tightlist
+\item
+  2018 Fall
+\end{itemize}
+
+\hypertarget{powerful-publishable-plots-the-grammar-of-graphics}{%
+\subsection{Powerful Publishable Plots: The Grammar of
+Graphics}\label{powerful-publishable-plots-the-grammar-of-graphics}}
+
+The do's and don't of good graphics, not specifically to any one
+software package.
+
+\begin{itemize}
+\tightlist
+\item
+  2018 Fall
+\item
+  2016 Spring
+\end{itemize}
+
+\hypertarget{drop-in-statistical-software-summer-sessions}{%
+\subsection{Drop in Statistical Software Summer
+Sessions}\label{drop-in-statistical-software-summer-sessions}}
+
+Installation, orientation, \& workflow, Importing \& wrangling data,
+Summary tables \& graphics, Running Analyses, Tabulation \&
+visualization of results\ldots R and SPSS
+
+\begin{itemize}
+\tightlist
+\item
+  2018 Fall \emph{(3 sessions)}
+\item
+  2018 Summer \emph{(6 sessions)}
+\end{itemize}
+
+\hypertarget{reproducible-workflow-intro-to-spss-via-syntax}{%
+\subsection{Reproducible Workflow: Intro to SPSS, via
+Syntax}\label{reproducible-workflow-intro-to-spss-via-syntax}}
+
+Do you use SPSS only by clicking on the menus? Have you ever wanted to
+learn how to use SPSS syntax? Learn how to be more efficient, have more
+control, and save time, by using syntax for data management and
+statistical analysis. No SPSS background required.
+
+\begin{itemize}
+\tightlist
+\item
+  2018 Spring
+\end{itemize}
+
+\hypertarget{exact-methods-for-categorical-data-spss-r-statxact}{%
+\subsection{Exact Methods for Categorical Data (SPSS, R, \&
+StatXact)}\label{exact-methods-for-categorical-data-spss-r-statxact}}
+
+Not all data is `normal' or continuous. Other samples are small, sparse,
+or highly correlated. If standard ANOVA and Regression methods are out,
+what can you do instead? Come find out about methods you can use in
+these situations.
+
+\begin{itemize}
+\tightlist
+\item
+  2018 Spring
+\end{itemize}
+
+\hypertarget{multiple-linear-regression-refresher-spss-r}{%
+\subsection{Multiple Linear Regression Refresher (SPSS \&
+R)}\label{multiple-linear-regression-refresher-spss-r}}
+
+Did you know that ANOVA is just a special case of regression? Regression
+permits the inclusion of continuous predictors, customized interactions,
+quadratic terms, and can better model the results of observational
+studies.
+
+\begin{itemize}
+\tightlist
+\item
+  2018 Spring
+\end{itemize}
+
+\hypertarget{logistic-regression}{%
+\subsection{Logistic Regression}\label{logistic-regression}}
+
+Introduction to modeling dichotomous (binary) outcomes and interpreting
+results, including interactions. Focus on demystify odds, log odds, odds
+ratios, and probabilities, while also covering assumptions and
+interpretation of results.
+
+\begin{itemize}
+\tightlist
+\item
+  2017, Fall
+\end{itemize}
+
+\hypertarget{gee-generalized-estimating-equations}{%
+\subsection{GEE: Generalized Estimating
+Equations}\label{gee-generalized-estimating-equations}}
+
+Introduction to GEEs for clustered and nested data (cross-sectional) and
+repeated measures (longitudinal)
+
+\begin{itemize}
+\tightlist
+\item
+  2017 Spring
+\end{itemize}
+
+\hypertarget{intro-to-r-the-tidyverse-way}{%
+\subsection{Intro to R: the Tidyverse
+way}\label{intro-to-r-the-tidyverse-way}}
+
+Introduction to R via R Studio using the tidyverse packages import,
+tidy, transform, visualization, models, and results
+
+\begin{itemize}
+\tightlist
+\item
+  2016 Fall
+\end{itemize}
+
+\hypertarget{explore-your-data-with-ggplot-in-r}{%
+\subsection{Explore Your Data with ggplot in
+R}\label{explore-your-data-with-ggplot-in-r}}
+
+Interactive, hands-on workshop assumes some familiarity with R
+
+\begin{itemize}
+\tightlist
+\item
+  2016 Spring
+\end{itemize}
+
+\hypertarget{introduction-to-r-r-studio-for-absolute-beginners}{%
+\subsection{Introduction to R \& R Studio, For Absolute
+Beginners}\label{introduction-to-r-r-studio-for-absolute-beginners}}
+
+Lecture and Interactive, hands-on workshop suggest coming with a laptop
+preloaded with R and R Studio
+
+\begin{itemize}
+\tightlist
+\item
+  2015 Fall
+\end{itemize}
+
+\vspace{1.5cm}
+
+\hypertarget{talks}{%
+\section{Talks}\label{talks}}
+
+\hypertarget{usu-data-analytics-student-seminar-series}{%
+\subsection{USU Data Analytics Student Seminar
+Series}\label{usu-data-analytics-student-seminar-series}}
+
+What should I ``git?'' Getting started with Git and GitHub using the Git
+Kracken interface for version control and collaborative research.
+
+\begin{itemize}
+\tightlist
+\item
+  Jan.~19, 2019
+\end{itemize}
+
+
+\end{document}
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.

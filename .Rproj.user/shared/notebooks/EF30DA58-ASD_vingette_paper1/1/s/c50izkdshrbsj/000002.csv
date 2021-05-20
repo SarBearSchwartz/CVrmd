@@ -1,0 +1,18 @@
+"0","citation() %>% print(bibtex = FALSE)"
+"1","
+"
+"1","To cite R in publications use:
+"
+"1","
+"
+"1","  R Core Team (2020). R: A language and environment for statistical computing. R
+  Foundation for Statistical Computing, Vienna, Austria. URL
+  https://www.R-project.org/.
+"
+"1","
+"
+"1","We have invested a lot of time and effort in creating R, please cite it when using it
+for data analysis. See also ‘citation(""pkgname"")’ for citing R packages.
+"
+"1","
+"

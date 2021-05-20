@@ -10,7 +10,7 @@ twitter: USU_StatStudio
 github: SarBearSchwartz
 linkedin: SarBearSchwartz
 date: "`r format(Sys.time(), '%B %Y')`"
-output: vitae::hyndman
+output: vitae::moderncv
 headcolor: "0F2439"
 header_includes:
   - \ExecuteBibliographyOptions{useprefix=true, doi=true, url=true}
@@ -36,6 +36,15 @@ library(RefManageR)
 library(tidyverse)
 ```
 
+
+
+```{r getdata, include=FALSE}
+pubs <- scholar::get_publications("HMdHkLYAAAAJ&hl") %>% 
+  dplyr::mutate(author = author %>% 
+                  as.character %>% 
+                  stringr::str_trim()) %>% 
+  dplyr::arrange(desc(year))
+```
 
 # Appointments
 
@@ -101,11 +110,11 @@ and grant submissions",
 "Logan River Academy, Logan, Utah"
 ) %>%  
   vitae::detailed_entries(
-    what = position,
-    when =year_span,
-    with = department,
+    what  = position,
+    when  = year_span,
+    with  = department,
     where = location,
-    why = bullet
+    why   = bullet
   )
 ```
 
@@ -363,28 +372,42 @@ Past:
 ## Peer Reviewed Journals
 
 
+```{r}
+pubs %>% 
+  dplyr::filter(year == 2020) %>% 
+  detailed_entries(
+    what = title,
+    when = as.character(year),
+    with = author,
+    where = journal,
+    .protect = TRUE
+  )
+```
+
+
+
+
 ### Submitted or Under Review
 
 
-```{r}
+```{r, eval=FALSE}
 vitae::bibliography_entries("publications.bib") %>% 
-  dplyr::arrange(desc(year), desc(month), key) %>% 
-  dplyr::filter(bibtype == "Article") %>% 
-  dplyr::filter(is.na(year))
+  dplyr::arrange(desc(issued)) %>% 
+  dplyr::filter(type == "article-journal") 
 ```
 
 ### 2019
 
-```{r}
+```{r, eval=FALSE}
 vitae::bibliography_entries("publications.bib") %>% 
-  dplyr::arrange(desc(year), desc(month), key) %>% 
-  dplyr::filter(bibtype == "Article") %>% 
+  dplyr::arrange(desc(issued)) %>% 
+  dplyr::filter(type == "article-journal") 
   dplyr::filter(year == 2019)
 ```
 
 ### 2018
 
-```{r}
+```{r, eval=FALSE}
 vitae::bibliography_entries("publications.bib") %>% 
   dplyr::arrange(desc(year), desc(month), key) %>% 
   dplyr::filter(bibtype == "Article") %>% 
@@ -397,7 +420,7 @@ vitae::bibliography_entries("publications.bib") %>%
 
 ### 2017 and prior
 
-```{r}
+```{r, eval=FALSE}
 vitae::bibliography_entries("publications.bib") %>% 
   dplyr::arrange(desc(year), desc(month), key) %>% 
   dplyr::filter(bibtype == "Article") %>% 
@@ -407,9 +430,9 @@ vitae::bibliography_entries("publications.bib") %>%
 
 ## PhD Dissertation
 
-```{r}
+```{r, eval=FALSE}
 vitae::bibliography_entries("publications.bib") %>% 
-  dplyr::filter(bibtype == "PhdThesis") 
+  dplyr::filter(genre == "PhD thesis") 
 ```
 
 
@@ -417,9 +440,9 @@ vitae::bibliography_entries("publications.bib") %>%
 
 ### Online eBooks
 
-```{r}
+```{r, eval=FALSE}
 vitae::bibliography_entries("publications.bib") %>% 
-  dplyr::filter(bibtype == "Electronic") 
+  dplyr::filter(id = ) 
 ```
 
 

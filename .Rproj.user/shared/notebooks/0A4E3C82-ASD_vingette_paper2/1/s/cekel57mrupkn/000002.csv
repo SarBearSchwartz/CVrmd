@@ -1,0 +1,23 @@
+"0","anova(fit_mlm_3) %>% "
+"0","  xtable::xtable(caption = ""Model 3, Type III Analysis of Variance Table with Satterthwaite's method"") %>% "
+"0","  print(caption.placement = ""top"")"
+"1","% latex table generated in R 4.0.3 by xtable 1.8-4 package
+% Tue Mar 30 15:22:25 2021
+\begin{table}[ht]
+\centering
+\caption{Model 3, Type III Analysis of Variance Table with Satterthwaite's method} 
+\begin{tabular}{lrrrrrr}
+  \hline
+ & Sum Sq & Mean Sq & NumDF & DenDF & F value & Pr($>$F) \\ 
+  \hline
+dx & 316446.63 & 52741.10 & 6.00 & 1374.00 & 171.63 & 0.0000 \\ 
+  vin\_gender & 18.62 & 18.62 & 1.00 & 229.00 & 0.06 & 0.8058 \\ 
+  vin\_ethnic & 2151.77 & 717.26 & 3.00 & 229.00 & 2.33 & 0.0747 \\ 
+  dx:vin\_gender & 2578.77 & 429.79 & 6.00 & 1374.00 & 1.40 & 0.2117 \\ 
+  dx:vin\_ethnic & 12221.65 & 678.98 & 18.00 & 1374.00 & 2.21 & 0.0025 \\ 
+  vin\_gender:vin\_ethnic & 946.08 & 315.36 & 3.00 & 229.00 & 1.03 & 0.3817 \\ 
+  dx:vin\_gender:vin\_ethnic & 10152.99 & 564.05 & 18.00 & 1374.00 & 1.84 & 0.0175 \\ 
+   \hline
+\end{tabular}
+\end{table}
+"

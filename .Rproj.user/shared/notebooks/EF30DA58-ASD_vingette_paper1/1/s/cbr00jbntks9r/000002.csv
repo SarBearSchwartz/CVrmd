@@ -1,0 +1,8 @@
+"0","fit_aov_like %>% "
+"0","  emmeans::emmip( ~ vin_ethnic | vin_gender,"
+"0","                 CIs = TRUE,"
+"0","                 labeller = labeller(vin_gender = c(""Female"" = ""F"","
+"0","                                                    ""Male"" = ""M""))) +"
+"0","  theme_bw() +"
+"0","  labs(x = ""Vignette Student's Ethnicity"","
+"0","       y = ""Participant's Rating of ASD Likelyhood\nEstimated Marginal Mean, 0 - 100"")"

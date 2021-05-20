@@ -1,0 +1,5 @@
+"0","ggsave(filename = ""Figure_2_panel_b.png"","
+"0","       plot = fig_aov_conf,"
+"0","       width = 5,"
+"0","       height = 5,"
+"0","       units = ""in"")"

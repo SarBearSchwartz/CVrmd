@@ -1,0 +1,7 @@
+"0","fit_mlm_4 <- lmerTest::lmer(likely ~ dx*vin_gender*vin_ethnic + conf + (1|id),"
+"0","                            data = data_mlm,"
+"0","                            REML = FALSE)"
+"0",""
+"0","fit_mlm_5 <- lmerTest::lmer(likely ~ dx*vin_gender*vin_ethnic*conf + (1|id),"
+"0","                            data = data_mlm,"
+"0","                            REML = FALSE)"

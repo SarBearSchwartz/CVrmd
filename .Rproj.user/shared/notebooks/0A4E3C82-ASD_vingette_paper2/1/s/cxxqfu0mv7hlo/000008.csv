@@ -1,0 +1,32 @@
+"0","data_long %>% "
+"0","  dplyr::filter(measure == ""likely"") %>% "
+"0","  tidyr::pivot_wider(names_from = dx,"
+"0","                     names_prefix = ""lik_"","
+"0","                     values_from = rating) %>% "
+"0","  dplyr::select(starts_with(""lik"")) %>% "
+"0","  dplyr::rename_all(function(x) gsub(""lik_"", """", x)) %>% "
+"0","  psych::alpha()"
+"2","Adding missing grouping variables: `id`
+"
+"2","Number of categories should be increased  in order to count frequencies. 
+"
+"2","Some items were negatively correlated with the total scale and probably 
+should be reversed.  
+To do this, run the function again with the 'check.keys=TRUE' option"
+"1","Some items ("
+"1"," "
+"1","id"
+"1"," "
+"1",") were negatively correlated with the total scale and 
+probably should be reversed.  
+To do this, run the function again with the 'check.keys=TRUE' option"
+"1","
+Reliability analysis "
+"1"," "
+"1"," 
+"
+"1","Call: "
+"1","psych::alpha(x = .)
+"
+"1","
+ "

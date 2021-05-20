@@ -1,0 +1,3 @@
+"0","fit_lm_conf_1 <- data_lm %>% "
+"0","  lm(asd_conf ~ vin_ethnic,"
+"0","     data = .)"

@@ -1,0 +1,5 @@
+"0","data %>% "
+"0","  ggplot(aes(meanconf)) +"
+"0","  geom_histogram() +"
+"0","  theme_bw() +"
+"0","  labs(x = ""Likelihood Rating"")"

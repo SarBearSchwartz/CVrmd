@@ -1,0 +1,4 @@
+"0","fit_lm_like_4 <- data_lm %>% "
+"0","  lm(asd_likely ~ vin_gender*vin_ethnic + "
+"0","       trainingasd ,"
+"0","     data = .)"

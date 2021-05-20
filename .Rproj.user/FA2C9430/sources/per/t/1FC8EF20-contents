@@ -1,0 +1,671 @@
+---
+title:    "2017 Year-to-Date"
+author:   "Sarah Schwartz, Director"
+date:     "(prepared on `r format(Sys.time(), ' %B %d, %Y')`)"
+output:
+  pdf_document:
+    toc: no
+    number_sections: false
+header-includes:
+    - \usepackage{geometry}
+      \geometry{
+        top=1in,            
+        inner=1in,
+        outer=1in,
+        bottom=1in,     
+      }
+    - \usepackage{fancyhdr}
+    - \usepackage{lipsum}
+    - \usepackage{layout}
+    
+
+---
+
+
+\pagestyle{fancyplain} 
+\lhead{\includegraphics[height=2.2cm]{StatStudioLogo_dark_smaller.png}} 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Load packages
+library("tidyverse")
+library("REDCapR")
+library("redcapAPI")
+library("lubridate")
+library("stringr")
+library("forcats")
+library("furniture")
+library("pander")
+library("ggalt")
+library("RColorBrewer")
+
+# Set dates to include
+dt_beg <- ymd("2017-01-01")
+dt_end <- ymd("2017-12-30")
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+pal_RB = c("coral", "dodgerblue")
+pal_BB = c("aquamarine3", "darkblue")
+```
+
+
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+### -------------------------------------------------- ###
+### REDCapR: export data from REDCap and import into R
+### -------------------------------------------------- ###
+
+uri   <- "https://redcap.cehs.usu.edu/api/"
+token <- "3833AFDE5DB376603FBEA9747787212E"
+ds_raw    <- redcap_read(redcap_uri = uri, token = token)$data 
+  
+
+names(ds_raw) <- names(ds_raw) %>% 
+  str_replace_all("_new_", "_")
+
+#ds_raw
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+### -------------------------------------------------- ###
+### declare values and labels for formatting
+### -------------------------------------------------- ###
+
+department_vals = c(10, 20, 30, 40, 50, 60, 70, 80, 90, 99)
+department_cats = c("COMD", "CPD", "FCHD", "KHS", "ITLS", 
+                    "NHP", "PSY", "TEAL", "SPED", "Other")
+
+role_vals = 1:2
+role_cats = c("Faculty/Staff", "Student")
+
+project_type_vals = c(1:7, 99)
+project_type_cats = c("Publication", 
+                      "Dissertation", 
+                      "Thesis", 
+                      "Abstract", 
+                      "Poster",
+                      "Grant",
+                      "REDCap",
+                      "Other")
+
+employee_vals = c(1:4, 99)
+employee_cats = c("Full Professor", 
+                  "Associate Professor",
+                  "Assistant Professor",
+                  "Research Staff",
+                  "Other Position")
+
+student_vals = c(1:3, 99)
+student_cats = c("PhD Student",
+                 "Masters Student",
+                 "Undergraduate",
+                 "Other Degree")
+
+intake_phase_vals = c(10, 20, 30)
+intake_phase_cats = c("Planning/Design", 
+                      "Data Collection/Cleaning", 
+                      "Analysis/Reporting")
+
+consult_vals = c(10, 20)
+consult_cats = c("Sarah Schwartz", 
+                 "Tyson Barrett")
+
+location_vals = c(10, 20, 99)
+location_cats = c("Sarah's Office (EDUC 455)",
+                  "Conference Room (EDUC 454)",
+                  "Other Location")
+
+steps_vals = c(100, 125, 155,
+               200, 260, 280, 
+               320, 340, 360, 
+               400, 420, 440, 
+               500, 540, 560, 
+               800, 810, 820)
+steps_cats = c("Discussion - Project Orientation",
+               "Discussion - Reviewer Comments",
+               "Discussion - Other Topic",
+               "Planning - Study Design & Methods",
+               "Planning - Power & Sample Size",
+               "Planning - Data Collection",
+               "Data - Cleaning & Wrangling",
+               "Data - Missing Data Concerns",
+               "Data - Summarize & Visualize",
+               "Analysis - Assumption Checking",
+               "Analysis - Software Usage",
+               "Analysis - Interpreting Results",
+               "Drafting - Methods & Results",
+               "Drafting - Tables",
+               "Drafting - Figures",
+               "REDCap - Intro & Demo",
+               "REDCap - Training",
+               "REDCap - Setup Project")
+
+area_cats = c("Discussion",
+              "Planning",
+              "Data",
+              "Analysis",
+              "Drafting",
+              "REDCap")
+
+subarea_cats = c(  "Project Orientation",
+                   "Reviewer Comments",
+                   "Other Topic",
+                   "Study Design & Methods",
+                   "Power & Sample Size",
+                   "Data Collection",
+                   "Cleaning & Wrangling",
+                   "Missing Data Concerns",
+                   "Summarize & Visualize",
+                   "Assumption Checking",
+                   "Software Usage",
+                   "Interpreting Results",
+                   "Methods & Results",
+                   "Tables",
+                   "Figures",
+                   "Intro & Demo",
+                   "Training",
+                   "Setup Project")
+
+
+methods_vals = c(1, 100,
+                 110, 120, 130, 140, 
+                 200, 210, 220, 230, 240, 
+                 300, 310, 320, 330, 340, 350, 
+                 400, 
+                 500, 
+                 800)
+methods_cats = c("Not applicable",
+                 "Undetermined at this point",
+                 "Power Analysis & Sample Size", 
+                 "Descriptive Summaries",
+                 "Visualizing - raw data", 
+                 "Visualizing - model results", 
+                 "Validity and Reliability", 
+                 "Develop Survey or Scale", 
+                 "Measurement Model: CFA or EFA", 
+                 "Mediation Analysis", 
+                 "SEM & path analysis", 
+                 "ANOVA or t-tests", 
+                 "Repeated Measures ANOVA", 
+                 "MANOVA", 
+                 "Multiple Regression", 
+                 "Generalized Regression", 
+                 "Multilevel Models: HLM, LMM, GEE, GLMM", 
+                 "Variable Selection", 
+                 "Missing Data Analysis", 
+                 "Mixed-Methods")
+
+
+software_vals = c(10*(0:7), 90, 91, 9599)
+
+software_cats = c("None",
+                  "SPSS",
+                  "R",
+                  "Mplus",
+                  "Stata",
+                  "Excel",
+                  "SAS",
+                  "G*Power",
+                  "REDCap",
+                  "Qualtrics",
+                  "Other")
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+### -------------------------------------------------- ###
+### Apply labels and formatting
+### -------------------------------------------------- ###
+
+ds <- ds_raw %>% 
+  separate(redcap_event_name,
+           into = c("event", "arm", "time")) %>% 
+  mutate(event = event  %>% factor(levels = c("request", "cycle"))) %>% 
+  select(-arm, -time) %>% 
+  mutate(client_dept = client_dept %>% 
+           factor(levels = department_vals,
+                  labels = department_cats)) %>% 
+  mutate(client_dept_text = ifelse(client_dept == "Other",
+                                   client_dept_other,
+                                   client_dept %>% as.character())) %>% 
+  mutate(client_usu_role = client_usu_role %>% 
+           factor(levels = role_vals,
+                  labels = role_cats)) %>% 
+  mutate(proj_type = proj_type %>% 
+           factor(levels = project_type_vals,
+                  labels = project_type_cats)) %>% 
+  mutate(proj_type_text = ifelse(proj_type == "Other",
+                                 proj_type_other,
+                                 proj_type %>% as.character())) %>% 
+  mutate(employee_position = employee_position %>% 
+           factor(levels = employee_vals,
+                  labels = employee_cats)) %>% 
+  mutate(employee_position_text = ifelse(employee_position == "Other Position",
+                                         employee_position_other,
+                                         employee_position %>% as.character())) %>% 
+  mutate(student_degree = student_degree %>% 
+           factor(levels = student_vals,
+                  labels = student_cats)) %>% 
+  mutate(student_degree_text = ifelse(student_degree == "Other Degree",
+                                      student_degree_other,
+                                      student_degree %>% as.character())) %>% 
+  mutate(intake_phase = intake_phase %>% 
+           factor(levels = intake_phase_vals,
+                  labels = intake_phase_cats) %>% 
+           as.character()) %>% 
+  mutate(work_date = work_date %>% ymd) %>% 
+  mutate(work_consult = work_consult %>% 
+           factor(levels = consult_vals,
+                  labels = consult_cats)) %>% 
+  mutate(meet_date = meet_date %>% ymd) %>% 
+  mutate(meet_consult = meet_consult %>% 
+           factor(levels = consult_vals,
+                  labels = consult_cats)) %>% 
+  mutate(meet_loc = meet_loc %>% 
+           factor(levels = location_vals,
+                  labels = location_cats)) %>% 
+  mutate(meet_loc_text = ifelse(meet_loc == "Other Location",
+                                meet_loc_other,
+                                meet_loc %>% as.character())) %>% 
+  mutate(meet_attend_text = ifelse(meet_attend == 1,
+                                   paste0("- also attending: ", meet_attend_other),
+                                   "")) %>% 
+  mutate(meet_remote_text = ifelse(meet_remote == 1,
+                                   paste0(";", meet_remote_notes),
+                                   "")) 
+#ds
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+### -------------------------------------------------- ###
+### Heading for each project
+### -------------------------------------------------- ###
+
+template_employ  <- " 
+#### **%s %s** [%s] %s - %s    
+> **%s**      
+%s: *%s*
+"
+
+template_student <- "
+#### **%s %s** [%s] %s with %s    - %s    
+> **%s**      
+%s: *%s*
+"
+
+ds_request <- ds %>% 
+  mutate(bullet = ifelse(client_usu_role == role_cats[1],
+                         sprintf(template_employ,
+                                 ds$client_name_first,
+                                 ds$client_name_last,
+                                 ds$client_dept_text,
+                                 ds$employee_position_text,
+                                 ds$proj_type_text,
+                                 ds$intake_title,
+                                 ds$intake_phase,
+                                 ds$intake_notes),
+                          sprintf(template_student,
+                                  ds$client_name_first,
+                                  ds$client_name_last,
+                                  ds$client_dept_text,
+                                  ds$student_degree_text,
+                                  ds$student_mentor,
+                                  ds$proj_type_text,
+                                  ds$intake_title,
+                                  ds$intake_phase,
+                                  ds$intake_notes))) %>% 
+  filter(event == "request") %>% 
+  mutate(event_type = "Request Form") %>% 
+  select(record_num, 
+         event,
+         client_usu_role,
+         client_dept,       client_dept_text,
+         student_degree,    student_degree_text,
+         employee_position, employee_position_text,
+         proj_type,         proj_type_text,
+         bullet)
+
+#ds_request
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+### -------------------------------------------------- ###
+### LOG: prepatroy work down by consultant
+### -------------------------------------------------- ###
+
+template_work <- "
+* %s BACKGROUND WORK done by **%s** (%s hr)    \n     
+     - %s
+"
+
+ds_work <- ds %>% 
+  mutate(bullet = sprintf(template_work,
+                          ds$work_date %>% format("%b-%d (%a)"),
+                          ds$work_consult,
+                          ds$work_dur,
+                          ds$work_notes)) %>% 
+  filter(event == "cycle") %>% 
+  mutate(event_type = "Prep Work") %>% 
+  mutate(date       = work_date)  %>% 
+  mutate(dur        = work_dur) %>% 
+  mutate(consultant = work_consult) %>% 
+  select(record_num, client_usu_role, 
+         event, event_type, 
+         dur, consultant, 
+         date, bullet,
+         starts_with("work_steps"),
+         starts_with("work_methods"),
+         starts_with("work_software"))  %>% 
+  mutate(date = ymd(date)) %>% 
+  filter(date %within% interval(dt_beg, dt_end)) %>% 
+  gather(key = var,
+         value = val,
+         starts_with("work_steps"),
+         starts_with("work_methods"),
+         starts_with("work_software")) %>% 
+  mutate(var = substring(var, 6)) %>% 
+  spread(key = var,
+         value = val)
+
+#ds_work
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+### -------------------------------------------------- ###
+### LOG: meetings between consultant and client
+### -------------------------------------------------- ###
+
+template_meet <- "
+* %s CONSULTATION MEETING with **%s** (%s hr)    \n   
+    - %s at %s %s %s 
+    - Accomplished: %s
+    - Client plan: %s
+    - Consultant plan: %s
+"    
+
+ds_meet <- ds %>% 
+  mutate(bullet = sprintf(template_meet,
+                          ds$meet_date %>% format("%b-%d (%a)"),
+                          ds$meet_consult,
+                          ds$meet_dur,
+                          ds$meet_time %>% strptime("%R") %>% format("%I:%M %p"),
+                          ds$meet_loc_text,
+                          ds$meet_attend_text,
+                          ds$meet_remote_text,
+                          ds$meet_accomp,
+                          ds$meet_plan_client,
+                          ds$meet_plan_consult)) %>% 
+  filter(event == "cycle") %>% 
+  mutate(event_type = "Consultation") %>% 
+  mutate(date       = meet_date)  %>% 
+  mutate(dur        = meet_dur) %>% 
+  mutate(consultant = meet_consult) %>% 
+  select(record_num, client_usu_role, 
+         event, event_type, 
+         dur, consultant, 
+         date, bullet,
+         starts_with("meet_steps"),
+         starts_with("meet_methods"),
+         starts_with("meet_software"))  %>% 
+  filter(date %within% interval(dt_beg, dt_end)) %>% 
+  gather(key = var,
+         value = val,
+         starts_with("meet_steps"),
+         starts_with("meet_methods"),
+         starts_with("meet_software")) %>% 
+  mutate(var = substring(var, 6)) %>% 
+  spread(key = var,
+         value = val)
+
+#ds_meet
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+include <- full_join(ds_request, ds_work) %>% 
+  full_join(ds_meet) %>% 
+  mutate(event_type = event_type %>% factor(levels = c("Request Form", 
+                                                       "Prep Work", 
+                                                       "Consultation"))) %>% 
+  arrange(record_num, event, date) %>% 
+  group_by(record_num) %>% 
+  mutate(client_usu_role   = first(client_usu_role)) %>% 
+  mutate(client_dept       = first(client_dept)) %>% 
+  mutate(employee_position = first(employee_position)) %>% 
+  mutate(student_degree    = first(student_degree)) %>% 
+  mutate(proj_type         = first(proj_type)) %>% 
+  mutate(client_role_name  = ifelse(client_usu_role == 1,
+                                    employee_position,
+                                    student_degree)) %>% 
+  filter(n() > 1) %>% 
+  mutate(month = date %>% lubridate::month(label = TRUE,  abbr = FALSE)) 
+
+#include
+```
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.width=6, fig.height=2.5, fig.align='center'}
+include %>% 
+  filter(event == "cycle") %>% 
+  group_by(client_dept, event_type) %>% 
+  summarise(dur = sum(dur, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  mutate(client_dept = fct_reorder(client_dept, dur, .desc = TRUE)) %>% 
+  ggplot(mapping = aes(x     = client_dept,
+                       y     = dur,
+                     fill    = event_type)) +
+  geom_col() +
+  theme_bw() +
+  labs(x = NULL,
+       y = "Hours",
+       fill = NULL) +
+  theme(legend.position      = c(0.95, 0.95),
+        legend.justification = c(1, 1),
+        legend.direction     = "horizontal",
+        legend.background    = element_rect(color = "black")) +
+  scale_fill_manual(values = pal_RB)
+```
+
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE, fig.width=6, fig.height=2.5, fig.align='center'}
+include %>% 
+  filter(event == "cycle") %>% 
+  group_by(client_dept, client_usu_role) %>% 
+  summarise(dur = sum(dur)) %>% 
+  ungroup() %>% 
+  mutate(client_dept = fct_reorder(client_dept, dur, fun = sum, .desc = TRUE)) %>% 
+  arrange(client_dept) %>% 
+  ggplot(mapping = aes(x    = client_dept,
+                       y    = dur,
+                       fill = client_usu_role %>% fct_rev)) +
+  geom_col() +
+  theme_bw() +
+  labs(x = NULL,
+       y = "Hours",
+       fill = NULL) +
+  theme(legend.position      = c(0.95, 0.95),
+        legend.justification = c(1, 1),
+        legend.direction     = "horizontal",
+        legend.background    = element_rect(color = "black")) +
+  scale_fill_manual(values = pal_BB)
+```
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE, fig.width=6, fig.height=2.5, fig.align='center'}
+include %>% 
+  filter(event == "cycle") %>% 
+  group_by(proj_type, client_usu_role) %>% 
+  summarise(dur = sum(dur)) %>% 
+  ungroup() %>% 
+  ggplot(mapping = aes(x    = proj_type,
+                       y    = dur,
+                       fill = client_usu_role %>% fct_rev)) +
+  geom_col() +
+  theme_bw() +
+  labs(x = NULL,
+       y = "Hours",
+       fill = NULL) +
+  theme(legend.position      = c(0.95, 0.95),
+        legend.justification = c(1, 1),
+        legend.direction     = "horizontal",
+        legend.background    = element_rect(color = "black"))+
+  scale_fill_manual(values = pal_BB)
+```
+
+
+
+
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE, fig.width=6, fig.height=6, fig.align='center'}
+include %>% 
+  filter(event == "cycle") %>% 
+  group_by(client_dept, client_usu_role, month) %>% 
+  summarise(dur = sum(dur)) %>% 
+  ungroup() %>% 
+  mutate(client_dept = fct_reorder(client_dept, dur, fun = sum, .desc = TRUE)) %>% 
+  arrange(client_dept) %>% 
+  ggplot(mapping = aes(x    = client_dept,
+                       y    = dur,
+                       fill = client_usu_role %>% fct_rev)) +
+  geom_col() +
+  theme_bw() +
+  labs(x = NULL,
+       y = "Hours",
+       fill = NULL) +
+  theme(legend.position      = c(.99, .99),
+        legend.justification = c(1, 1),
+        legend.direction     = "horizontal",
+        legend.background    = element_rect(color = "black")) +
+  scale_fill_manual(values = pal_BB) +
+  facet_grid(month ~.)
+```
+
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE, fig.width=6, fig.height=6, fig.align='center'}
+include %>% 
+  filter(event == "cycle") %>% 
+  group_by(proj_type, client_usu_role, month) %>% 
+  summarise(dur = sum(dur)) %>% 
+  ungroup() %>% 
+  ggplot(mapping = aes(x    = proj_type,
+                       y    = dur,
+                       fill = client_usu_role %>% fct_rev)) +
+  geom_col() +
+  theme_bw() +
+  labs(x = NULL,
+       y = "Hours",
+       fill = NULL) +
+  theme(legend.position      = c(0.99, 0.99),
+        legend.justification = c(1, 1),
+        legend.direction     = "horizontal",
+        legend.background    = element_rect(color = "black")) +   
+  scale_fill_manual(values = pal_BB)+
+  facet_grid(month ~.)
+```
+
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE, fig.width=6.5, fig.height=4, fig.align='center'}
+
+steps = data.frame(code = steps_vals,
+                   step = steps_cats)
+
+include %>% 
+  filter(event == "cycle") %>% 
+  select(dur, starts_with("steps")) %>% 
+  gather(key = var,
+         value = val,
+         starts_with("steps")) %>% 
+  group_by(var) %>% 
+  summarise(n = sum(val*dur)) %>% 
+  separate(var,
+           into = c("junk", "code"),
+           sep = "___") %>% 
+  ungroup() %>% 
+  merge(steps, by = "code") %>% 
+  filter(n >0) %>% 
+  ggplot(aes(x = n,
+             y = step  %>% fct_reorder(n) )) +
+  geom_point() +
+  theme_bw() +
+  labs(title = "Research Steps Addressed",
+       subtitle = "Each hour may count for more than one category",
+       x = "Hours",
+       y = NULL)
+```
+
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE, fig.width=6.5, fig.height=4, fig.align='center'}
+
+methods <- data.frame(code = methods_vals,
+                      meth = methods_cats)
+
+include %>% 
+  filter(event == "cycle") %>% 
+  select(dur, starts_with("methods")) %>% 
+  gather(key = var,
+         value = val,
+         starts_with("methods")) %>% 
+  group_by(var) %>% 
+  summarise(n = sum(val*dur)) %>% 
+  separate(var,
+           into = c("junk", "code"),
+           sep = "___") %>% 
+  ungroup() %>% 
+  merge(methods, by = "code") %>% 
+  filter(n >0) %>% 
+  ggplot(aes(x = n,
+             y = meth  %>% fct_reorder(n) )) +
+  geom_point() +
+  theme_bw() +
+  labs(title = "Research Method Addressed",
+       subtitle = "Each hour may count for more than one category",
+       x = "Hours",
+       y = NULL)
+```
+
+
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE, fig.width=6.5, fig.height=8, fig.align='center'}
+
+steps <- data.frame(code = steps_vals,
+                    step = steps_cats)
+
+include %>% 
+  filter(event == "cycle") %>% 
+  select(month, dur, starts_with("steps")) %>% 
+  gather(key = var,
+         value = val,
+         starts_with("steps")) %>% 
+  group_by(var, month) %>% 
+  summarise(n = sum(val*dur)) %>% 
+  separate(var,
+           into = c("junk", "code"),
+           sep = "___") %>% 
+  ungroup() %>% 
+  merge(steps, by = "code") %>% 
+  filter(n >0) %>%
+  mutate(code_lab = code %>%
+           as.numeric %>% 
+           factor(levels = steps_vals,
+                  labels = steps_cats)) %>% 
+  separate(code_lab,
+           into = c("area", "subarea"),
+           sep = " - ") %>% 
+  mutate(area = area %>% factor(levels = area_cats)) %>% 
+  mutate(subarea = subarea %>% factor(levels = subarea_cats)) %>% 
+  ggplot(aes(x = subarea,
+             y = n,
+             fill = area)) + 
+  #geom_lollipop(horizontal = TRUE) +
+  geom_bar(stat = "identity") +
+  theme_bw() +
+  coord_flip() +
+  labs(title = "Research Steps Addressed",
+       subtitle = "Each hour may count for more than one category",
+       y = "Hours",
+       x = NULL) +
+  facet_grid(area ~ month, scale = "free_y", space = "free", switch = "y")  +
+  scale_fill_manual(values = brewer.pal(6, "Spectral")) +
+  theme(legend.position = "none")
+
+```
+

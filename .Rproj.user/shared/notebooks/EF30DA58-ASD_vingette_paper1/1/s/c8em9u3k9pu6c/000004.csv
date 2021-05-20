@@ -1,0 +1,7 @@
+"0","data_long <- data %>% "
+"0","  tidyr::pivot_longer(col = asd_likely:sld_conf,"
+"0","                      names_to = c(""dx"", ""measure""),"
+"0","                      names_sep = ""_"","
+"0","                      names_ptypes = list(dx = factor(),"
+"0","                                          measure = factor()),"
+"0","                      values_to = ""rating"")"

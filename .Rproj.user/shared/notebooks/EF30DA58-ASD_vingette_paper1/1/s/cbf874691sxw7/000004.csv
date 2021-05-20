@@ -1,0 +1,23 @@
+"0","data %>% "
+"0","  dplyr::select(starts_with(""vin"")) %>% "
+"0","  table() %>% "
+"0","  addmargins() %>% "
+"0","  pander::pander(caption = ""Sample Size Breakdown"")"
+"1","
+----------------------------------
+   &nbsp;     Female   Male   Sum 
+------------ -------- ------ -----
+ **Asian**      26      25    51  
+
+ **Black**      32      32    64  
+
+ **Latinx**     29      33    62  
+
+ **White**      21      31    52  
+
+  **Sum**      108     121    229 
+----------------------------------
+
+Table: Sample Size Breakdown
+
+"

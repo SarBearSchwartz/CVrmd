@@ -1,0 +1,46 @@
+"0","data_long %>% 
+  dplyr::filter(measure == ""conf"") %>% 
+  tidyr::pivot_wider(names_from = dx,
+                     names_prefix = ""conf_"",
+                     values_from = rating) %>% 
+  dplyr::select(""Race"" = race2, 
+                ""Sex"" = gender, 
+                ""ASD know"" = askspr_stand_score,
+                starts_with(""conf""),
+                -confservasd) %>% 
+  dplyr::rename_all(function(x) gsub(""conf_"", """", x)) %>%
+  dplyr::mutate_all(as.numeric) %>% 
+  cor() %>% 
+  xtable::xtable(caption = ""Correlation Matrix for Confidence Ratings"")%>% 
+  print(caption.placement = ""top"")
+"
+"2","Adding missing grouping variables: `id`
+"
+"2","`mutate_all()` ignored the following grouping variables:
+Column `id`
+Use `mutate_at(df, vars(-group_cols()), myoperation)` to silence the message.
+"
+"1","% latex table generated in R 4.0.3 by xtable 1.8-4 package
+% Tue Mar 30 15:14:57 2021
+\begin{table}[ht]
+\centering
+\caption{Correlation Matrix for Confidence Ratings} 
+\begin{tabular}{rrrrrrrrrrrr}
+  \hline
+ & id & Race & Sex & ASD know & ASD & ADHD & SLI & ED & ID & TBI & SLD \\ 
+  \hline
+id & 1.00 & -0.02 & 0.03 &  & -0.10 & 0.01 & -0.03 & -0.05 & -0.06 & -0.03 & 0.03 \\ 
+  Race & -0.02 & 1.00 & 0.04 &  & -0.10 & 0.01 & -0.00 & 0.01 & 0.02 & -0.02 & -0.01 \\ 
+  Sex & 0.03 & 0.04 & 1.00 &  & -0.09 & -0.08 & -0.06 & -0.10 & -0.10 & -0.09 & -0.02 \\ 
+  ASD know &  &  &  & 1.00 &  &  &  &  &  &  &  \\ 
+  ASD & -0.10 & -0.10 & -0.09 &  & 1.00 & 0.65 & 0.61 & 0.64 & 0.61 & 0.61 & 0.64 \\ 
+  ADHD & 0.01 & 0.01 & -0.08 &  & 0.65 & 1.00 & 0.59 & 0.69 & 0.59 & 0.57 & 0.78 \\ 
+  SLI & -0.03 & -0.00 & -0.06 &  & 0.61 & 0.59 & 1.00 & 0.80 & 0.77 & 0.77 & 0.64 \\ 
+  ED & -0.05 & 0.01 & -0.10 &  & 0.64 & 0.69 & 0.80 & 1.00 & 0.79 & 0.82 & 0.65 \\ 
+  ID & -0.06 & 0.02 & -0.10 &  & 0.61 & 0.59 & 0.77 & 0.79 & 1.00 & 0.89 & 0.63 \\ 
+  TBI & -0.03 & -0.02 & -0.09 &  & 0.61 & 0.57 & 0.77 & 0.82 & 0.89 & 1.00 & 0.62 \\ 
+  SLD & 0.03 & -0.01 & -0.02 &  & 0.64 & 0.78 & 0.64 & 0.65 & 0.63 & 0.62 & 1.00 \\ 
+   \hline
+\end{tabular}
+\end{table}
+"

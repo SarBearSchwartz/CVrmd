@@ -1,0 +1,36 @@
+"0","data %>% 
+  dplyr::group_by(expcond) %>% 
+  furniture::table1(""Age"" = age,
+                    ""Gender"" = gender,
+                    ""Race/Ethnicity"" = race2,
+                    ""Degree"" = degree,
+                    ""Setting, parctice"" = practsetting,
+                    ""Setting, school"" = schoolsetting,
+                    ""Practicing, years"" = yearsinpractice,
+                    ""Trainging in ASD (0-100)"" = trainingasd,
+                    ""Culturally/Lingually diverse students"" = cldstudents,
+                    ""ASD knowledge, precieved (0 - 100)"" = perceivedasdknowledge,
+                    ""ASD knowledge, percent correct (0 - 100)"" = askspr_total_score*100/25,
+                    ""ASD knowledge, standardized measure"" = askspr_stand_score,
+                    ""Rating of ASD likelyhood (0-100)"" = asd_likely,
+                    ""Confidence in Rating of ASD likelyhood (0-100)"" = asd_conf,
+                    asd_conf,
+                    askspr_total_score,
+                    askspr_stand_score,
+                    na.rm = FALSE,
+                    total = FALSE,
+                    test = TRUE,
+                    digits = 2,
+                    output = ""markdown"",
+                    caption = ""Participant Dempographic Summary, by Vignette Condition"")
+"
+"2","Using dplyr::group_by() groups: expcond
+"
+"2","Chi-squared approximation may be incorrect"
+"2","Chi-squared approximation may be incorrect"
+"2","Chi-squared approximation may be incorrect"
+"2","Chi-squared approximation may be incorrect"
+"2","Chi-squared approximation may be incorrect"
+"2","Chi-squared approximation may be incorrect"
+"2","Breusch-Pagan Test of Heteroskedasticity suggests `var.equal = FALSE` in oneway.test() for: Rating.of.ASD.likelyhood..0.100.
+"

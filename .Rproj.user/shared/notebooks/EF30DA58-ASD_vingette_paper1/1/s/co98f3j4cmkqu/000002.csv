@@ -1,0 +1,52 @@
+"0","texreg::texreg(list(fit_lm_like_1,   # vignette condition factors only"
+"0","                    fit_lm_like_2,   # participant factors only"
+"0","                    fit_lm_like_3,   # all variables"
+"0","                    fit_lm_like_4),"
+"0","               custom.model.names = c(""(1) vignette"", "
+"0","                                      ""(2) Participant"", "
+"0","                                      ""(3) Both"", "
+"0","                                      ""(4) Custom""),"
+"0","               caption = ""First Multiple Linear Regression (MLR) Analysis, for Research Question 2a, Comparing Four Models Regressing Participant's RAting of ASD Likelihood on Vignette Condition and Participant Measures"","
+"0","               caption.above = TRUE,"
+"0","               label = ""table:MLR1"","
+"0","               bold = .05,"
+"0","               float.pos = ""hb"","
+"0","               single.row = TRUE)"
+"1","
+\begin{table}[hb]
+\caption{First Multiple Linear Regression (MLR) Analysis, for Research Question 2a, Comparing Four Models Regressing Participant's RAting of ASD Likelihood on Vignette Condition and Participant Measures}
+\begin{center}
+\begin{tabular}{l c c c c}
+\hline
+ & (1) vignette & (2) Participant & (3) Both & (4) Custom \\
+\hline
+(Intercept)                         & $\mathbf{31.00} \;  (5.18)^{***}$ & $12.47 \; (8.41)$ & $14.99 \;  (9.80)$                & $\mathbf{16.91} \;  (8.27)^{*}$   \\
+vin\_genderFemale                   & $11.35 \;  (8.11)$                &                   & $12.37 \;  (8.32)$                & $11.49 \;  (8.04)$                \\
+vin\_ethnicAsian                    & $3.96 \;  (7.70)$                 &                   & $3.76 \;  (7.81)$                 & $3.45 \;  (7.63)$                 \\
+vin\_ethnicBlack                    & $-4.37 \;  (7.15)$                &                   & $-3.37 \;  (7.38)$                & $-4.29 \;  (7.09)$                \\
+vin\_ethnicLatinx                   & $10.83 \;  (7.26)$                &                   & $10.56 \;  (7.47)$                & $10.53 \;  (7.20)$                \\
+vin\_genderFemale:vin\_ethnicAsian  & $4.27 \; (11.32)$                 &                   & $4.26 \; (11.44)$                 & $3.94 \; (11.22)$                 \\
+vin\_genderFemale:vin\_ethnicBlack  & $-1.52 \; (10.73)$                &                   & $-3.61 \; (10.89)$                & $-2.39 \; (10.64)$                \\
+vin\_genderFemale:vin\_ethnicLatinx & $\mathbf{-30.01} \; (10.88)^{**}$ &                   & $\mathbf{-30.18} \; (11.27)^{**}$ & $\mathbf{-29.26} \; (10.80)^{**}$ \\
+race\_2Non-White                    &                                   & $3.93 \; (5.05)$  & $2.84 \;  (4.97)$                 &                                   \\
+degreeMasters                       &                                   & $3.26 \; (4.46)$  & $1.27 \;  (4.45)$                 &                                   \\
+degreeDoctorate                     &                                   & $1.98 \; (5.97)$  & $3.01 \;  (5.91)$                 &                                   \\
+yearsinpractice                     &                                   & $-0.06 \; (0.21)$ & $-0.20 \;  (0.21)$                &                                   \\
+trainingasd                         &                                   & $0.01 \; (0.16)$  & $0.06 \;  (0.16)$                 & $\mathbf{0.21} \;  (0.10)^{*}$    \\
+cldstudents20-40\%                  &                                   & $0.62 \; (6.42)$  & $-4.12 \;  (6.40)$                &                                   \\
+cldstudents40-60\%                  &                                   & $-1.47 \; (5.50)$ & $-3.06 \;  (5.49)$                &                                   \\
+cldstudents60-80\%                  &                                   & $1.36 \; (6.12)$  & $2.46 \;  (6.01)$                 &                                   \\
+cldstudentsGreater than 80\%        &                                   & $0.41 \; (6.47)$  & $-0.49 \;  (6.35)$                &                                   \\
+perceivedasdknowledge               &                                   & $0.29 \; (0.17)$  & $0.19 \;  (0.17)$                 &                                   \\
+askspr\_stand\_score                &                                   & $0.70 \; (2.51)$  & $0.93 \;  (2.50)$                 &                                   \\
+\hline
+R$^2$                               & $0.09$                            & $0.05$            & $0.13$                            & $0.11$                            \\
+Adj. R$^2$                          & $0.06$                            & $0.00$            & $0.05$                            & $0.07$                            \\
+Num. obs.                           & $221$                             & $221$             & $221$                             & $221$                             \\
+\hline
+\multicolumn{5}{l}{\scriptsize{$^{***}p<0.001$; $^{**}p<0.01$; $^{*}p<0.05$}}
+\end{tabular}
+\label{table:MLR1}
+\end{center}
+\end{table}
+"

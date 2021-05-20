@@ -1,0 +1,20 @@
+"0","fit_aov_conf %>% "
+"0","  emmeans::emmeans(~ vin_ethnic) %>% "
+"0","  emmeans::contrast(list(""Asian vs. Rest"" = c(3, -1, -1, -1))) %>% "
+"0","  data.frame() %>% "
+"0","  dplyr::mutate(stars = case_when(p.value < .001 ~ ""***"","
+"0","                                  p.value < .010 ~ ""**"","
+"0","                                  p.value < .050 ~ ""*"","
+"0","                                  TRUE ~ """")) %>% "
+"0","  dplyr::mutate(g = estimate/sqrt(fit_aov_conf$anova_table$MSE[1])) %>% "
+"0","  pander::pander()"
+"2","NOTE: Results may be misleading due to involvement in interactions
+"
+"1","
+------------------------------------------------------------------------------
+    contrast      estimate    SE     df    t.ratio   p.value    stars     g   
+---------------- ---------- ------- ----- --------- ---------- ------- -------
+ Asian vs. Rest    41.61     15.24   221    2.73     0.006852    **     1.304 
+------------------------------------------------------------------------------
+
+"

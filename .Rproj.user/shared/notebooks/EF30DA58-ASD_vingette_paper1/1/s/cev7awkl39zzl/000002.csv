@@ -1,0 +1,16 @@
+"0","performance::compare_performance(fit_lm_like_1,   # vignette condition factors only"
+"0","                                 fit_lm_like_2,   # participant factors only"
+"0","                                 fit_lm_like_3,   # all variables"
+"0","                                 fit_lm_like_4,   # reduced model"
+"0","                                 rank = TRUE) "
+"2","Bayes factor is based on BIC approximation, thus BF and BIC hold the same information. Ignoring BF for performance-score.
+"
+"1","[34m# Comparison of Model Performance Indices[39m
+
+Model         | Type |     AIC |     BIC |   R2 | R2 (adj.) |  RMSE | Sigma |      BF | Performance-Score
+---------------------------------------------------------------------------------------------------------
+fit_lm_like_4 |   lm | 2105.25 | 2139.24 | 0.11 |      0.07 | 27.08 | 27.65 |   0.769 |            90.71%
+fit_lm_like_1 |   lm | 2108.13 | 2138.71 | 0.09 |      0.06 | 27.38 | 27.89 |    1.00 |            72.10%
+fit_lm_like_3 |   lm | 2120.08 | 2188.04 | 0.13 |      0.05 | 26.77 | 28.00 | < 0.001 |            59.64%
+fit_lm_like_2 |   lm | 2124.59 | 2168.77 | 0.05 |  3.65e-04 | 27.91 | 28.70 | < 0.001 |             6.51%
+"

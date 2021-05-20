@@ -1,0 +1,5 @@
+"0","tab_askspr_convert <- read.csv(""Rasch_score_conversion_table_ss_4-29-19.csv"") %>% "
+"0","  dplyr::select(-X) %>% "
+"0","  dplyr::mutate(raw_score = as.numeric(raw_score)) %>% "
+"0","  dplyr::rename(askspr_total_score = raw_score,"
+"0","                askspr_stand_score = theta_score)"

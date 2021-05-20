@@ -1,0 +1,8 @@
+"0","data %>% "
+"0","  dplyr::filter(!complete.cases(race2, vin_gender, vin_ethnic,  "
+"0","                                degree, yearsinpractice, trainingasd, cldstudents, "
+"0","                                perceivedasdknowledge, askspr_stand_score)) %>% "
+"0","  dplyr::select(race2, yearsinpractice, trainingasd, cldstudents, "
+"0","                perceivedasdknowledge, askspr_stand_score) %>% "
+"0","  VIM::aggr(numbers = TRUE,   # shows the number to the far right"
+"0","            prop    = FALSE)  # shows counts instead of proportions"

@@ -1,0 +1,30 @@
+"0","apa::anova_apa(fit_aov_conf,"
+"0","               format = ""rmarkdown"","
+"0","               print = FALSE) %>% "
+"0","  dplyr::mutate(effect = effect %>% "
+"0","                  as.factor() %>% "
+"0","                  forcats::fct_recode(""Main Effect of Gender"" = ""vin_gender"","
+"0","                                      ""Main Effect of Race/Ethnicity"" = ""vin_ethnic"","
+"0","                                      ""Interaction between Both"" = ""vin_gender:vin_ethnic""))  %>% "
+"0","  dplyr::filter(effect != ""(Intercept)"")%>% "
+"0","  dplyr::select(""Term"" = effect,"
+"0","                ""Significance"" = text) %>% "
+"0","  pander::pander(caption = ""Second 2x4 ANOVA, for Research Question 1b, for Particiapnt's Confidence in their Rating ASD Likelihood by Vignette Condition"","
+"0","                 justify = ""left"")"
+"1","
+-----------------------------------------------------------
+Term                            Significance               
+------------------------------- ---------------------------
+Main Effect of Gender           *F*(1, 221) = 0.00, *p* =  
+                                .958, $\eta^2_p$ < .01     
+
+Main Effect of Race/Ethnicity   *F*(3, 221) = 2.75, *p* =  
+                                .043, $\eta^2_p$ = .04     
+
+Interaction between Both        *F*(3, 221) = 0.90, *p* =  
+                                .444, $\eta^2_p$ = .01     
+-----------------------------------------------------------
+
+Table: Second 2x4 ANOVA, for Research Question 1b, for Particiapnt's Confidence in their Rating ASD Likelihood by Vignette Condition
+
+"

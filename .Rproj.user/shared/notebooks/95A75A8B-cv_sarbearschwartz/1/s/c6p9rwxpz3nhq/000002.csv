@@ -1,0 +1,10 @@
+"0","vitae::bibliography_entries(""publications.bib"") %>% "
+"0","  dplyr::arrange(desc(year), desc(month), key) %>% "
+"0","  dplyr::filter(bibtype == ""Article"") %>% "
+"0","  dplyr::filter(year == 2019)"
+"2","Error: arrange() failed at implicit mutate() step. 
+* Problem with `mutate()` input `..1`.
+[31mx[39m object 'year' not found
+[34mi[39m Input `..1` is `year`.
+[90mRun `rlang::last_error()` to see where the error occurred.[39m
+"

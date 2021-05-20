@@ -1,0 +1,13 @@
+"0","data_long %>% "
+"0","  dplyr::filter(measure == ""conf"") %>% "
+"0","  tidyr::pivot_wider(names_from = dx,"
+"0","                     names_prefix = ""conf_"","
+"0","                     values_from = rating) %>% "
+"0","  dplyr::select(starts_with(""conf"")) %>% "
+"0","  dplyr::rename_all(function(x) gsub(""conf_"", """", x)) %>% "
+"0","  dplyr::select(ASD, ADHD, SLD, ED, SLI, ID, TBI) %>% "
+"0","  psych::pairs.panels()"
+"2","Adding missing grouping variables: `id`
+"
+"2","Adding missing grouping variables: `id`
+"

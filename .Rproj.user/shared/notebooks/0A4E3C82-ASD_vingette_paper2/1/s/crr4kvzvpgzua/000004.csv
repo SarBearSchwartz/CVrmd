@@ -1,0 +1,4 @@
+"0","data_mlm <- data_long %>% "
+"0","  tidyr::pivot_wider(names_from = measure,"
+"0","                     values_from = rating) %>% "
+"0","  dplyr::mutate(dx = toupper(dx))"

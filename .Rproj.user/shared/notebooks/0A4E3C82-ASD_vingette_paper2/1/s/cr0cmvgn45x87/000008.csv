@@ -1,0 +1,8 @@
+"0","data_long %>% "
+"0","  dplyr::filter(measure == ""likely"") %>% "
+"0","  dplyr::filter(!is.na(rating)) %>% "
+"0","  ggplot(aes(rating)) +"
+"0","  geom_histogram(binwidth = 10) +"
+"0","  theme_bw() +"
+"0","  facet_wrap(~ dx, nrow = 2) +"
+"0","  labs (x = ""Likelihood Rating"")"

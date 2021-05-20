@@ -1,0 +1,130 @@
+"0","texreg::knitreg(fit_mlm_final,
+                single.row = TRUE)
+"
+"1","
+================================================================
+                                            Model 1             
+----------------------------------------------------------------
+(Intercept)                                    29.19  (7.67) ***
+dxASD                                         -12.04 (10.21)    
+dxED                                          -17.22  (8.96)    
+dxID                                          -25.71  (8.78) ** 
+dxSLD                                           3.58 (10.12)    
+dxSLI                                         -19.23  (8.96) *  
+dxTBI                                         -28.43  (8.64) ***
+vin_genderMale                                 -8.41 (12.14)    
+vin_ethnicBlack                               -14.59  (9.26)    
+vin_ethnicLatinx                              -12.64  (9.42)    
+vin_ethnicWhite                               -25.63 (11.19) *  
+conf                                            0.15  (0.12)    
+dxASD:vin_genderMale                           14.87 (15.40)    
+dxED:vin_genderMale                             2.95 (14.24)    
+dxID:vin_genderMale                             7.74 (13.82)    
+dxSLD:vin_genderMale                           -2.61 (16.34)    
+dxSLI:vin_genderMale                            9.37 (13.99)    
+dxTBI:vin_genderMale                           12.95 (13.48)    
+dxASD:vin_ethnicBlack                          15.29 (12.37)    
+dxED:vin_ethnicBlack                           11.40 (10.93)    
+dxID:vin_ethnicBlack                           14.23 (10.71)    
+dxSLD:vin_ethnicBlack                          -2.62 (12.20)    
+dxSLI:vin_ethnicBlack                          13.84 (10.97)    
+dxTBI:vin_ethnicBlack                          14.28 (10.58)    
+dxASD:vin_ethnicLatinx                         14.55 (12.31)    
+dxED:vin_ethnicLatinx                          14.52 (11.29)    
+dxID:vin_ethnicLatinx                          14.01 (11.03)    
+dxSLD:vin_ethnicLatinx                         -3.20 (12.43)    
+dxSLI:vin_ethnicLatinx                         12.64 (11.32)    
+dxTBI:vin_ethnicLatinx                         17.24 (10.85)    
+dxASD:vin_ethnicWhite                          12.02 (14.33)    
+dxED:vin_ethnicWhite                           16.83 (13.04)    
+dxID:vin_ethnicWhite                           25.25 (12.94)    
+dxSLD:vin_ethnicWhite                          -2.52 (14.23)    
+dxSLI:vin_ethnicWhite                          18.89 (12.88)    
+dxTBI:vin_ethnicWhite                          26.12 (12.74) *  
+vin_genderMale:vin_ethnicBlack                 17.29 (14.48)    
+vin_genderMale:vin_ethnicLatinx                -0.52 (14.48)    
+vin_genderMale:vin_ethnicWhite                 30.35 (15.84)    
+dxASD:conf                                      0.42  (0.16) ** 
+dxED:conf                                      -0.16  (0.14)    
+dxID:conf                                      -0.14  (0.13)    
+dxSLD:conf                                      0.05  (0.15)    
+dxSLI:conf                                     -0.13  (0.14)    
+dxTBI:conf                                     -0.12  (0.13)    
+vin_genderMale:conf                             0.21  (0.18)    
+vin_ethnicBlack:conf                            0.38  (0.16) *  
+vin_ethnicLatinx:conf                           0.15  (0.15)    
+vin_ethnicWhite:conf                            0.60  (0.18) ***
+dxASD:vin_genderMale:vin_ethnicBlack          -30.14 (18.37)    
+dxED:vin_genderMale:vin_ethnicBlack            -7.09 (17.07)    
+dxID:vin_genderMale:vin_ethnicBlack           -15.84 (16.66)    
+dxSLD:vin_genderMale:vin_ethnicBlack           -6.75 (19.30)    
+dxSLI:vin_genderMale:vin_ethnicBlack          -19.22 (16.82)    
+dxTBI:vin_genderMale:vin_ethnicBlack          -20.36 (16.34)    
+dxASD:vin_genderMale:vin_ethnicLatinx         -22.65 (18.35)    
+dxED:vin_genderMale:vin_ethnicLatinx            1.13 (17.15)    
+dxID:vin_genderMale:vin_ethnicLatinx            5.24 (16.69)    
+dxSLD:vin_genderMale:vin_ethnicLatinx           7.10 (19.19)    
+dxSLI:vin_genderMale:vin_ethnicLatinx          -3.96 (16.96)    
+dxTBI:vin_genderMale:vin_ethnicLatinx          -8.98 (16.36)    
+dxASD:vin_genderMale:vin_ethnicWhite          -28.77 (19.87)    
+dxED:vin_genderMale:vin_ethnicWhite           -18.42 (18.50)    
+dxID:vin_genderMale:vin_ethnicWhite           -24.24 (18.17)    
+dxSLD:vin_genderMale:vin_ethnicWhite           -1.29 (20.70)    
+dxSLI:vin_genderMale:vin_ethnicWhite          -27.49 (18.16)    
+dxTBI:vin_genderMale:vin_ethnicWhite          -32.53 (17.81)    
+dxASD:vin_genderMale:conf                      -0.61  (0.24) ** 
+dxED:vin_genderMale:conf                       -0.06  (0.22)    
+dxID:vin_genderMale:conf                       -0.16  (0.21)    
+dxSLD:vin_genderMale:conf                       0.03  (0.25)    
+dxSLI:vin_genderMale:conf                      -0.19  (0.21)    
+dxTBI:vin_genderMale:conf                      -0.24  (0.21)    
+dxASD:vin_ethnicBlack:conf                     -0.52  (0.22) *  
+dxED:vin_ethnicBlack:conf                      -0.25  (0.20)    
+dxID:vin_ethnicBlack:conf                      -0.31  (0.19)    
+dxSLD:vin_ethnicBlack:conf                     -0.04  (0.22)    
+dxSLI:vin_ethnicBlack:conf                     -0.34  (0.19)    
+dxTBI:vin_ethnicBlack:conf                     -0.35  (0.19)    
+dxASD:vin_ethnicLatinx:conf                    -0.62  (0.21) ** 
+dxED:vin_ethnicLatinx:conf                     -0.19  (0.19)    
+dxID:vin_ethnicLatinx:conf                     -0.12  (0.18)    
+dxSLD:vin_ethnicLatinx:conf                     0.13  (0.20)    
+dxSLI:vin_ethnicLatinx:conf                    -0.15  (0.19)    
+dxTBI:vin_ethnicLatinx:conf                    -0.26  (0.18)    
+dxASD:vin_ethnicWhite:conf                     -0.47  (0.23) *  
+dxED:vin_ethnicWhite:conf                      -0.23  (0.21)    
+dxID:vin_ethnicWhite:conf                      -0.55  (0.20) ** 
+dxSLD:vin_ethnicWhite:conf                     -0.14  (0.22)    
+dxSLI:vin_ethnicWhite:conf                     -0.53  (0.20) ** 
+dxTBI:vin_ethnicWhite:conf                     -0.60  (0.20) ** 
+vin_genderMale:vin_ethnicBlack:conf            -0.58  (0.24) *  
+vin_genderMale:vin_ethnicLatinx:conf            0.19  (0.23)    
+vin_genderMale:vin_ethnicWhite:conf            -0.59  (0.25) *  
+dxASD:vin_genderMale:vin_ethnicBlack:conf       0.90  (0.31) ** 
+dxED:vin_genderMale:vin_ethnicBlack:conf        0.30  (0.29)    
+dxID:vin_genderMale:vin_ethnicBlack:conf        0.48  (0.27)    
+dxSLD:vin_genderMale:vin_ethnicBlack:conf       0.12  (0.32)    
+dxSLI:vin_genderMale:vin_ethnicBlack:conf       0.50  (0.28)    
+dxTBI:vin_genderMale:vin_ethnicBlack:conf       0.59  (0.27) *  
+dxASD:vin_genderMale:vin_ethnicLatinx:conf      0.88  (0.30) ** 
+dxED:vin_genderMale:vin_ethnicLatinx:conf      -0.03  (0.28)    
+dxID:vin_genderMale:vin_ethnicLatinx:conf      -0.23  (0.27)    
+dxSLD:vin_genderMale:vin_ethnicLatinx:conf     -0.50  (0.31)    
+dxSLI:vin_genderMale:vin_ethnicLatinx:conf      0.06  (0.28)    
+dxTBI:vin_genderMale:vin_ethnicLatinx:conf     -0.02  (0.27)    
+dxASD:vin_genderMale:vin_ethnicWhite:conf       0.77  (0.32) *  
+dxED:vin_genderMale:vin_ethnicWhite:conf        0.25  (0.30)    
+dxID:vin_genderMale:vin_ethnicWhite:conf        0.46  (0.28)    
+dxSLD:vin_genderMale:vin_ethnicWhite:conf       0.01  (0.33)    
+dxSLI:vin_genderMale:vin_ethnicWhite:conf       0.58  (0.29) *  
+dxTBI:vin_genderMale:vin_ethnicWhite:conf       0.64  (0.28) *  
+----------------------------------------------------------------
+AIC                                         13769.50            
+BIC                                         14382.78            
+Log Likelihood                              -6770.75            
+Num. obs.                                    1603               
+Num. groups: id                               229               
+Var: id (Intercept)                            78.71            
+Var: Residual                                 260.47            
+================================================================
+*** p < 0.001; ** p < 0.01; * p < 0.05
+"

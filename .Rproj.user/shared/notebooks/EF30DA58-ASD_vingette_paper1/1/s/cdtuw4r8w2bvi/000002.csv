@@ -1,0 +1,6 @@
+"0","fit_aov_like <- data %>% "
+"0","  afex::aov_4(asd_likely ~ vin_gender*vin_ethnic + (1|id),"
+"0","              data = .,"
+"0","              anova_table = list(es = c(""ges"", ""pes"")))"
+"2","Contrasts set to contr.sum for the following variables: vin_gender, vin_ethnic
+"

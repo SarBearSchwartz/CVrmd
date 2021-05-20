@@ -1,0 +1,56 @@
+"0","tab_askspr_convert %>% "
+"0","  dplyr::rename(""Number Correct"" = askspr_total_score,"
+"0","                ""Standard SCore"" = askspr_stand_score) %>% "
+"0","  pander::pander(caption = ""Score conversion for ASKS-Profesional, revised"")"
+"1","
+---------------------------------
+ Number Correct   Standard SCore 
+---------------- ----------------
+       0              -5.65      
+
+       1              -4.835     
+
+       4              -2.683     
+
+       5              -2.231     
+
+       6              -1.834     
+
+       7              -1.476     
+
+       8              -1.146     
+
+       9             -0.8359     
+
+       10            -0.5419     
+
+       11            -0.2597     
+
+       12            0.01393     
+
+       13             0.2816     
+
+       14             0.5459     
+
+       15             0.8093     
+
+       16             1.075      
+
+       17             1.345      
+
+       18             1.624      
+
+       19             1.917      
+
+       20             2.233      
+
+       21             2.583      
+
+       22             2.993      
+
+       23             3.515      
+---------------------------------
+
+Table: Score conversion for ASKS-Profesional, revised
+
+"

@@ -1,0 +1,9 @@
+"0","fit_aov_conf %>% "
+"0","  emmeans::emmip(~ vin_ethnic, "
+"0","                 CIs = TRUE) +"
+"0","  theme_bw() +"
+"0","  labs(x = ""Vignette Student's Race/Ethnicity"","
+"0","       y = ""Rater's Confidene in their Rating of ASD Likelyhood"","
+"0","      caption = ""Note: 95% confidence levels displayed"")"
+"2","NOTE: Results may be misleading due to involvement in interactions
+"
